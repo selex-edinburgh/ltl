@@ -1,0 +1,104 @@
+@namespace(uri="http://www.leonardo.com/ltf/LTF", prefix="ltf")
+
+package ltf;
+
+class Model {
+	val Package[*] packages;
+} 
+
+class Package {
+	val Testing[*] testings;
+	val TestableEntity[*] testableEntities;
+	val TestRequirement[*] testRequirements;
+	val TestSpecification[*] testSpecifications;
+	val TestingMethod[*] testingMethods;
+}
+
+class Testing {
+	attr String name;
+	attr String description;
+	val TestingActivity[3..*] testingActivities;
+	ref TestRequirement[*] testRequirements;
+	ref TestableEntity[*] requiredInputs; 
+}
+
+class TestableEntity {
+	attr String name;
+	attr String description;
+	ref TestSpecification[*]#testableEntities testSpefications;
+}
+
+class TestRequirement  {
+	attr String name;
+	attr String description;
+	ref TestableEntity referredTestableEntity;
+}
+
+abstract class TestSpecification {
+	attr String name;
+	attr String description;
+	ref TestableEntity[*]#testSpefications testableEntities;
+}
+
+class TestingMethod  {
+	attr String name;
+	attr String description;
+}
+
+
+abstract class  TestingActivity {
+	attr String name;
+	attr String description; 
+	ref TestingMethod[*] testingMethods;
+}
+
+class TestingDesign extends TestingActivity {
+	ref TestRequirement[*] testRequirements;
+	ref TestSpecification[*] producedTestSpecifications;
+}
+
+
+abstract class TestResult {
+	attr String name;
+	attr String description;
+}
+
+class  ActualResult extends TestResult {
+	attr Object value;
+}
+
+class  Incident extends TestResult {
+	attr String version;
+}
+
+abstract class TestingRealisation extends TestingActivity {
+	ref TestSpecification[*] inputTestSpecifications;
+	ref TestResult[*] producedTestResults; 
+}
+
+class TestSuite extends TestSpecification {
+	val TestCase[*] testCases;
+}
+
+class TestCase extends TestSpecification {
+	attr String precondition;
+	attr Object[*] inputs;
+	attr Object expectedResult;
+	attr String postcondition;
+}
+
+
+class TestingAnalysis extends TestingActivity {
+	ref TestSpecification[*] inputTestSpecifications;
+	ref TestResult[*] inputTestResults;
+	ref TestConclusionReport producedTestReport;
+}
+
+class TestConclusionReport {
+	attr String name;
+	attr String description;
+	attr String version;
+}
+
+
+

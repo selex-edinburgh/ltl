@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="ltf" nsURI="http://www.leonardo.com/ltf/LTF" nsPrefix="ltf">
+  <eClassifiers xsi:type="ecore:EClass" name="Model">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="packages" upperBound="-1"
+        eType="#//Package" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Package">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="testings" upperBound="-1"
+        eType="#//Testing" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="testableEntities" upperBound="-1"
+        eType="#//TestableEntity" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="testRequirements" upperBound="-1"
+        eType="#//TestRequirement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="testSpecifications" upperBound="-1"
+        eType="#//TestSpecification" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="testingMethods" upperBound="-1"
+        eType="#//TestingMethod" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Testing">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="testingActivities" lowerBound="3"
+        upperBound="-1" eType="#//TestingActivity" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="testRequirements" upperBound="-1"
+        eType="#//TestRequirement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="requiredInputs" upperBound="-1"
+        eType="#//TestableEntity"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TestableEntity">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="testSpefications" upperBound="-1"
+        eType="#//TestSpecification" eOpposite="#//TestSpecification/testableEntities"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TestRequirement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="referredTestableEntity"
+        eType="#//TestableEntity"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TestSpecification" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="testableEntities" upperBound="-1"
+        eType="#//TestableEntity" eOpposite="#//TestableEntity/testSpefications"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TestingMethod">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TestingActivity" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="testingMethods" upperBound="-1"
+        eType="#//TestingMethod"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TestingDesign" eSuperTypes="#//TestingActivity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="testRequirements" upperBound="-1"
+        eType="#//TestRequirement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="producedTestSpecifications"
+        upperBound="-1" eType="#//TestSpecification"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TestResult" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActualResult" eSuperTypes="#//TestResult">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Incident" eSuperTypes="#//TestResult">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TestingRealisation" abstract="true"
+      eSuperTypes="#//TestingActivity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inputTestSpecifications"
+        upperBound="-1" eType="#//TestSpecification"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="producedTestResults" upperBound="-1"
+        eType="#//TestResult"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TestSuite" eSuperTypes="#//TestSpecification"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TestCase" eSuperTypes="#//TestSpecification">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="precondition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="inputs" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="expectedResult" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="postcondition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TestingAnalysis" eSuperTypes="#//TestingActivity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inputTestSpecifications"
+        upperBound="-1" eType="#//TestSpecification"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inputTestResults" upperBound="-1"
+        eType="#//TestResult"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="producedTestReport" eType="#//TestConclusionReport"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TestConclusionReport">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>
