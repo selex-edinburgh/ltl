@@ -2,103 +2,64 @@
 
 package ltf;
 
+@GenModel(documentation="The root of the model")
 class Model {
+	@GenModel(documentation="The model can only contain packages")
 	val Package[*] packages;
 } 
 
+@GenModel(documentation="A package groups entities required for testing")
 class Package {
-	val Testing[*] testings;
-	val TestableEntity[*] testableEntities;
-	val TestRequirement[*] testRequirements;
-	val TestSpecification[*] testSpecifications;
-	val TestingMethod[*] testingMethods;
+	val PackagableElement[*] packagableElements;
 }
 
-class Testing {
+@GenModel(documentation="Everything that can go into a Package")
+class PackagableElement {
 	attr String name;
 	attr String description;
-	val TestingActivity[3..*] testingActivities;
+}
+
+@GenModel(documentation="This entity represents the execution of testing process")
+class TestExecution extends PackagableElement {
+	attr String date;	
+	ref TestSpecification[*] testSpecifications;
 	ref TestRequirement[*] testRequirements;
-	ref TestableEntity[*] requiredInputs; 
+	ref TestableEntity[*] testableEntities; 
 }
 
-class TestableEntity {
-	attr String name;
-	attr String description;
-	ref TestSpecification[*]#testableEntities testSpefications;
-}
-
-class TestRequirement  {
-	attr String name;
-	attr String description;
-	ref TestableEntity referredTestableEntity;
-}
-
-abstract class TestSpecification {
-	attr String name;
-	attr String description;
-	ref TestableEntity[*]#testSpefications testableEntities;
-}
-
-class TestingMethod  {
-	attr String name;
-	attr String description;
-}
-
-
-abstract class  TestingActivity {
-	attr String name;
-	attr String description; 
-	ref TestingMethod[*] testingMethods;
-}
-
-class TestingDesign extends TestingActivity {
-	ref TestRequirement[*] testRequirements;
-	ref TestSpecification[*] producedTestSpecifications;
-}
-
-
-abstract class TestResult {
-	attr String name;
-	attr String description;
-}
-
-class  ActualResult extends TestResult {
-	attr Object value;
-}
-
-class  Incident extends TestResult {
+@GenModel(documentation="a Testable Entity is a concrete object able to be tested. This entity represents the entity that undergoes testing.")
+class TestableEntity  extends PackagableElement {
 	attr String version;
+	ref TestSpecification[*] testSpefications;
 }
 
-abstract class TestingRealisation extends TestingActivity {
-	ref TestSpecification[*] inputTestSpecifications;
-	ref TestResult[*] producedTestResults; 
+@GenModel(documentation="A Test Requirement states what must be verified/validated of a Testable Entity based on the test basis.")
+class TestRequirement extends PackagableElement  {
+	attr String version;
+	ref TestableEntity testableEntity;
 }
 
+@GenModel(documentation="A Test Specification is the concrete executable artefact to perform testing. It can be a TestCase or a TestSuite, a group of TestCase.")
+abstract class TestSpecification  extends PackagableElement {
+	attr String date;
+	attr String version;
+	ref TestableEntity[*] testableEntities;
+	ref TestRequirement[*] testRequirements;  
+}
+
+@GenModel(documentation="A Test Suite consists of many test cases")
 class TestSuite extends TestSpecification {
-	val TestCase[*] testCases;
+	val TestSpecification[*] testSpecifications;
 }
 
+@GenModel(documentation="A TestCase is the smallest executable unit of testing")
 class TestCase extends TestSpecification {
 	attr String precondition;
+	attr String testingMethod;
 	attr Object[*] inputs;
 	attr Object expectedResult;
+	attr Object actualResult;
+	attr boolean passed = true;
+	attr String incident;
 	attr String postcondition;
 }
-
-
-class TestingAnalysis extends TestingActivity {
-	ref TestSpecification[*] inputTestSpecifications;
-	ref TestResult[*] inputTestResults;
-	ref TestConclusionReport producedTestReport;
-}
-
-class TestConclusionReport {
-	attr String name;
-	attr String description;
-	attr String version;
-}
-
-
-
