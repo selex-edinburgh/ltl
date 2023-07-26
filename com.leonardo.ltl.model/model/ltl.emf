@@ -1,0 +1,110 @@
+@namespace(uri="http://www.leonardo.com/ltl/LTL", prefix="ltl")
+
+package ltl;
+
+@GenModel(documentation="The root of the model.")
+class Model {
+	@GenModel(documentation="The model can only contain packages.")
+	val Package[*] packages;
+} 
+
+@GenModel(documentation="A package groups elements for testing.")
+class Package {
+
+	@GenModel(documentation="The name of the package.")
+	attr String name;
+	
+	@GenModel(documentation="The description of the package.")
+	attr String description;
+	
+	@GenModel(documentation="A package contains packagable elements.")
+	val PackagableElement[*] packagableElements;
+}
+
+@GenModel(documentation="Everything that can go into a Package.")
+abstract class PackagableElement {
+	
+	@GenModel(documentation="The name of the packagable element.")
+	attr String name;
+	
+	@GenModel(documentation="The description of the packagable element.")
+	attr String description;
+}
+
+@GenModel(documentation="This entity represents the execution of testing process.")
+class TestExecution extends PackagableElement {
+
+	@GenModel(documentation="The date time the test execution is performed.")
+	attr String date;
+		
+	@GenModel(documentation="The test specifications performed in the test execution.")
+	ref TestSpecification[*] testSpecifications; 
+}
+
+@GenModel(documentation="a Testable Entity is a concrete object able to be tested. This entity represents the entity that undergoes testing.")
+class TestableEntity  extends PackagableElement {
+
+	@GenModel(documentation="The version of the testable entity.")
+	attr String version;
+}
+
+@GenModel(documentation="A Test Requirement states what must be verified/validated of a Testable Entity.")
+class TestRequirement extends PackagableElement  {
+
+	@GenModel(documentation="The version of the requirement.")
+	attr String version;
+	
+	@GenModel(documentation="The entity associated with the requirement.")
+	ref TestableEntity testableEntity;
+}
+
+@GenModel(documentation="A Test Specification is the concrete executable artefact to perform testing. It can be a TestCase or a TestSuite, a group of TestCase.")
+abstract class TestSpecification  extends PackagableElement {
+
+	@GenModel(documentation="The date time the test specification is executed")
+	attr String date;
+	
+	@GenModel(documentation="The version of the test specification")
+	attr String version;
+	
+	@GenModel(documentation="The entities that are being tested")
+	ref TestableEntity[*] testableEntities;
+	
+	@GenModel(documentation="The test requirements that the test specification addresses.")
+	ref TestRequirement[*] testRequirements;
+	
+	@GenModel(documentation="The precondition that must be set up before running test specification.")
+	attr String precondition;
+	
+	@GenModel(documentation="The postcondition after running the test specification.")
+	attr String postcondition;  
+}
+
+@GenModel(documentation="A Test Suite consists of many test cases and other test suites.")
+class TestSuite extends TestSpecification {
+
+	@GenModel(documentation="The test cases and other test suites contained in the test suite.")
+	ref TestSpecification[*] testSpecifications;
+}
+
+@GenModel(documentation="A TestCase is the smallest executable unit of testing.")
+class TestCase extends TestSpecification {
+	
+	@GenModel(documentation="The testing method used in in the test case.")
+	attr String testingMethod;
+	
+	@GenModel(documentation="The inputs used in the test case.")
+	attr Object[*] inputs;
+	
+	@GenModel(documentation="The expected result of the test case.")
+	attr Object expectedResult;
+	
+	@GenModel(documentation="The actual result of the test case.")
+	attr Object actualResult;
+	
+	@GenModel(documentation="True if the test case passed or False if it failed.")
+	attr boolean passed = true;
+	
+	@GenModel(documentation="The description of the incidents captured during the test., eg., warnings ,errors, etc.")
+	attr String incident;
+}

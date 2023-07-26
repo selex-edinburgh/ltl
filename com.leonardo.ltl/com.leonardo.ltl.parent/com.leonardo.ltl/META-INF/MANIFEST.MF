@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: com.leonardo.ltl
+Bundle-ManifestVersion: 2
+Bundle-Name: com.leonardo.ltl
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: com.leonardo.ltl; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: com.leonardo.ltl.model,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.16.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Export-Package: com.leonardo.ltl.parser.antlr,
+ com.leonardo.ltl.serializer,
+ com.leonardo.ltl.formatting2,
+ com.leonardo.ltl,
+ com.leonardo.ltl.validation,
+ com.leonardo.ltl.services,
+ com.leonardo.ltl.scoping,
+ com.leonardo.ltl.generator,
+ com.leonardo.ltl.parser.antlr.internal
+Import-Package: org.apache.log4j

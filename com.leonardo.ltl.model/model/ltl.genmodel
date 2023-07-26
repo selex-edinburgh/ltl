@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="" modelDirectory="/com.leonardo.ltl.model/src" modelPluginID="com.leonardo.ltl.model"
+    modelName="Ltl" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false">
+  <foreignModel>ltl.ecore</foreignModel>
+  <genPackages prefix="Ltl" basePackage="com.leonardo.ltl" disposableProviderFactory="true"
+      ecorePackage="ltl.ecore#/">
+    <genClasses ecoreClass="ltl.ecore#//Model">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ltl.ecore#//Model/packages"/>
+    </genClasses>
+    <genClasses ecoreClass="ltl.ecore#//Package">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ltl.ecore#//Package/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ltl.ecore#//Package/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ltl.ecore#//Package/packagableElements"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ltl.ecore#//PackagableElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ltl.ecore#//PackagableElement/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ltl.ecore#//PackagableElement/description"/>
+    </genClasses>
+    <genClasses ecoreClass="ltl.ecore#//TestExecution">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ltl.ecore#//TestExecution/date"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ltl.ecore#//TestExecution/testSpecifications"/>
+    </genClasses>
+    <genClasses ecoreClass="ltl.ecore#//TestableEntity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ltl.ecore#//TestableEntity/version"/>
+    </genClasses>
+    <genClasses ecoreClass="ltl.ecore#//TestRequirement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ltl.ecore#//TestRequirement/version"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ltl.ecore#//TestRequirement/testableEntity"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ltl.ecore#//TestSpecification">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ltl.ecore#//TestSpecification/date"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ltl.ecore#//TestSpecification/version"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ltl.ecore#//TestSpecification/testableEntities"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ltl.ecore#//TestSpecification/testRequirements"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ltl.ecore#//TestSpecification/precondition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ltl.ecore#//TestSpecification/postcondition"/>
+    </genClasses>
+    <genClasses ecoreClass="ltl.ecore#//TestSuite">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ltl.ecore#//TestSuite/testSpecifications"/>
+    </genClasses>
+    <genClasses ecoreClass="ltl.ecore#//TestCase">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ltl.ecore#//TestCase/testingMethod"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ltl.ecore#//TestCase/inputs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ltl.ecore#//TestCase/expectedResult"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ltl.ecore#//TestCase/actualResult"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ltl.ecore#//TestCase/passed"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ltl.ecore#//TestCase/incident"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

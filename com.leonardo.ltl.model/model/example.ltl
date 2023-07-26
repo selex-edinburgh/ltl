@@ -1,0 +1,91 @@
+package Ecore2OmlTest
+	description "A package containing test for Ecore2Oml generator"	
+	
+	entity Ecore2OmlGenerator
+		description "A tool to generate Oml descriptions/vocabularies from Ecore models/metamodels"
+		version "0.1.1"		
+	end
+	
+	requirement Correctness01
+		entity Ecore2OmlGenerator
+		description "The generated OML has no syntax errors"
+		version "2.1.2"		
+	end
+	
+	requirement Performance01
+		version "2.1.2"
+		description "The generator can generate text 200 kbs/second"
+		entity Ecore2OmlGenerator		
+	end
+	
+	case testBpmn2Oml
+		description "Transform a BPMN model/metamodel to OML description/vocabulary"
+		version "0.1.1"
+		date "2023-01-01"
+		precondition "Load the BPMN model"
+		postcondition "The target OML model/metamodel persisted and loaded"
+		method "Check Syntax Correctness by executing OML gradle checking script"
+		expectedResult "No Errors"
+		actualResult "1 Error"
+		passed false
+		incident "1 error"
+		inputs "SourceFile", "TargetFile" 
+	end
+	
+	case testUml2Oml
+		description "Transform a UML model/metamodel to OML description/vocabulary"
+		version "0.1.1"
+		date "2023-01-01"
+		precondition "Load the UML model"
+		postcondition "The target OML model/metamodel persisted and loaded"
+		method "Check Syntax Correctness by executing OML gradle checking script"
+		expectedResult "No Errors"
+		actualResult "No Errors"
+		passed true
+		incident "No Incident"
+		inputs "SourceFile", "TargetFile" 
+	end
+	
+	case testPerformance
+		description "Test performance with a ADL model with size 3 MBs"
+		date "2023-04-23"
+		version "0.1.1"
+		precondition "Load the ADL model"
+		postcondition "The target OML model/metamodel persisted"
+		method "Output Rate"
+		expectedResult "200 kbps/second"
+		actualResult "300 kbps/second"
+		passed true
+		incident "No Incident"
+		inputs "SourceFile", "TargetFile" 
+	end
+	
+	suite CorrectnessSuite
+		date "2023-04-23" 
+		version "0.3.3"
+		description "A group of test cases for testing correctness"
+		cases
+			testBpmn2Oml
+			testUml2Oml
+		end
+	end
+	
+	suite PerformanceTestSuite
+		cases
+			testPerformance
+		end
+		date "2023-04-23" 
+		version "0.3.3"
+		description "A group of test cases for testing performance"
+	end
+	
+	test Ecore2OmlTest
+		description "test the Ecore2Oml"
+		date "2023-01-01"
+		specification
+			CorrectnessSuite
+			PerformanceTestSuite
+		end
+	end
+
+end
