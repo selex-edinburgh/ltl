@@ -30,6 +30,9 @@ package Ecore2OmlTest
 		passed false
 		incident "1 error"
 		inputs "SourceFile", "TargetFile" 
+		entities
+			Ecore2OmlGenerator 
+		end
 	end
 	
 	case testUml2Oml
@@ -58,6 +61,9 @@ package Ecore2OmlTest
 		passed true
 		incident "No Incident"
 		inputs "SourceFile", "TargetFile" 
+		entities
+			Ecore2OmlGenerator
+		end
 	end
 	
 	suite CorrectnessSuite
