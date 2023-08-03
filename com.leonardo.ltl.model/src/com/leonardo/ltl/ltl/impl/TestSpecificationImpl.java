@@ -29,8 +29,8 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * <ul>
  *   <li>{@link com.leonardo.ltl.ltl.impl.TestSpecificationImpl#getDate <em>Date</em>}</li>
  *   <li>{@link com.leonardo.ltl.ltl.impl.TestSpecificationImpl#getVersion <em>Version</em>}</li>
- *   <li>{@link com.leonardo.ltl.ltl.impl.TestSpecificationImpl#getTestableEntities <em>Testable Entities</em>}</li>
- *   <li>{@link com.leonardo.ltl.ltl.impl.TestSpecificationImpl#getTestRequirements <em>Test Requirements</em>}</li>
+ *   <li>{@link com.leonardo.ltl.ltl.impl.TestSpecificationImpl#getTests <em>Tests</em>}</li>
+ *   <li>{@link com.leonardo.ltl.ltl.impl.TestSpecificationImpl#getDemonstratesSatisfactionOf <em>Demonstrates Satisfaction Of</em>}</li>
  *   <li>{@link com.leonardo.ltl.ltl.impl.TestSpecificationImpl#getPrecondition <em>Precondition</em>}</li>
  *   <li>{@link com.leonardo.ltl.ltl.impl.TestSpecificationImpl#getPostcondition <em>Postcondition</em>}</li>
  * </ul>
@@ -79,24 +79,24 @@ public abstract class TestSpecificationImpl extends PackagableElementImpl implem
 	protected String version = VERSION_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getTestableEntities() <em>Testable Entities</em>}' reference list.
+	 * The cached value of the '{@link #getTests() <em>Tests</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTestableEntities()
+	 * @see #getTests()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<TestableEntity> testableEntities;
+	protected EList<TestableEntity> tests;
 
 	/**
-	 * The cached value of the '{@link #getTestRequirements() <em>Test Requirements</em>}' reference list.
+	 * The cached value of the '{@link #getDemonstratesSatisfactionOf() <em>Demonstrates Satisfaction Of</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTestRequirements()
+	 * @see #getDemonstratesSatisfactionOf()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<TestRequirement> testRequirements;
+	protected EList<TestRequirement> demonstratesSatisfactionOf;
 
 	/**
 	 * The default value of the '{@link #getPrecondition() <em>Precondition</em>}' attribute.
@@ -209,11 +209,11 @@ public abstract class TestSpecificationImpl extends PackagableElementImpl implem
 	 * @generated
 	 */
 	@Override
-	public EList<TestableEntity> getTestableEntities() {
-		if (testableEntities == null) {
-			testableEntities = new EObjectResolvingEList<TestableEntity>(TestableEntity.class, this, LtlPackage.TEST_SPECIFICATION__TESTABLE_ENTITIES);
+	public EList<TestableEntity> getTests() {
+		if (tests == null) {
+			tests = new EObjectResolvingEList<TestableEntity>(TestableEntity.class, this, LtlPackage.TEST_SPECIFICATION__TESTS);
 		}
-		return testableEntities;
+		return tests;
 	}
 
 	/**
@@ -222,11 +222,11 @@ public abstract class TestSpecificationImpl extends PackagableElementImpl implem
 	 * @generated
 	 */
 	@Override
-	public EList<TestRequirement> getTestRequirements() {
-		if (testRequirements == null) {
-			testRequirements = new EObjectResolvingEList<TestRequirement>(TestRequirement.class, this, LtlPackage.TEST_SPECIFICATION__TEST_REQUIREMENTS);
+	public EList<TestRequirement> getDemonstratesSatisfactionOf() {
+		if (demonstratesSatisfactionOf == null) {
+			demonstratesSatisfactionOf = new EObjectResolvingEList<TestRequirement>(TestRequirement.class, this, LtlPackage.TEST_SPECIFICATION__DEMONSTRATES_SATISFACTION_OF);
 		}
-		return testRequirements;
+		return demonstratesSatisfactionOf;
 	}
 
 	/**
@@ -287,10 +287,10 @@ public abstract class TestSpecificationImpl extends PackagableElementImpl implem
 				return getDate();
 			case LtlPackage.TEST_SPECIFICATION__VERSION:
 				return getVersion();
-			case LtlPackage.TEST_SPECIFICATION__TESTABLE_ENTITIES:
-				return getTestableEntities();
-			case LtlPackage.TEST_SPECIFICATION__TEST_REQUIREMENTS:
-				return getTestRequirements();
+			case LtlPackage.TEST_SPECIFICATION__TESTS:
+				return getTests();
+			case LtlPackage.TEST_SPECIFICATION__DEMONSTRATES_SATISFACTION_OF:
+				return getDemonstratesSatisfactionOf();
 			case LtlPackage.TEST_SPECIFICATION__PRECONDITION:
 				return getPrecondition();
 			case LtlPackage.TEST_SPECIFICATION__POSTCONDITION:
@@ -314,13 +314,13 @@ public abstract class TestSpecificationImpl extends PackagableElementImpl implem
 			case LtlPackage.TEST_SPECIFICATION__VERSION:
 				setVersion((String)newValue);
 				return;
-			case LtlPackage.TEST_SPECIFICATION__TESTABLE_ENTITIES:
-				getTestableEntities().clear();
-				getTestableEntities().addAll((Collection<? extends TestableEntity>)newValue);
+			case LtlPackage.TEST_SPECIFICATION__TESTS:
+				getTests().clear();
+				getTests().addAll((Collection<? extends TestableEntity>)newValue);
 				return;
-			case LtlPackage.TEST_SPECIFICATION__TEST_REQUIREMENTS:
-				getTestRequirements().clear();
-				getTestRequirements().addAll((Collection<? extends TestRequirement>)newValue);
+			case LtlPackage.TEST_SPECIFICATION__DEMONSTRATES_SATISFACTION_OF:
+				getDemonstratesSatisfactionOf().clear();
+				getDemonstratesSatisfactionOf().addAll((Collection<? extends TestRequirement>)newValue);
 				return;
 			case LtlPackage.TEST_SPECIFICATION__PRECONDITION:
 				setPrecondition((String)newValue);
@@ -346,11 +346,11 @@ public abstract class TestSpecificationImpl extends PackagableElementImpl implem
 			case LtlPackage.TEST_SPECIFICATION__VERSION:
 				setVersion(VERSION_EDEFAULT);
 				return;
-			case LtlPackage.TEST_SPECIFICATION__TESTABLE_ENTITIES:
-				getTestableEntities().clear();
+			case LtlPackage.TEST_SPECIFICATION__TESTS:
+				getTests().clear();
 				return;
-			case LtlPackage.TEST_SPECIFICATION__TEST_REQUIREMENTS:
-				getTestRequirements().clear();
+			case LtlPackage.TEST_SPECIFICATION__DEMONSTRATES_SATISFACTION_OF:
+				getDemonstratesSatisfactionOf().clear();
 				return;
 			case LtlPackage.TEST_SPECIFICATION__PRECONDITION:
 				setPrecondition(PRECONDITION_EDEFAULT);
@@ -374,10 +374,10 @@ public abstract class TestSpecificationImpl extends PackagableElementImpl implem
 				return DATE_EDEFAULT == null ? date != null : !DATE_EDEFAULT.equals(date);
 			case LtlPackage.TEST_SPECIFICATION__VERSION:
 				return VERSION_EDEFAULT == null ? version != null : !VERSION_EDEFAULT.equals(version);
-			case LtlPackage.TEST_SPECIFICATION__TESTABLE_ENTITIES:
-				return testableEntities != null && !testableEntities.isEmpty();
-			case LtlPackage.TEST_SPECIFICATION__TEST_REQUIREMENTS:
-				return testRequirements != null && !testRequirements.isEmpty();
+			case LtlPackage.TEST_SPECIFICATION__TESTS:
+				return tests != null && !tests.isEmpty();
+			case LtlPackage.TEST_SPECIFICATION__DEMONSTRATES_SATISFACTION_OF:
+				return demonstratesSatisfactionOf != null && !demonstratesSatisfactionOf.isEmpty();
 			case LtlPackage.TEST_SPECIFICATION__PRECONDITION:
 				return PRECONDITION_EDEFAULT == null ? precondition != null : !PRECONDITION_EDEFAULT.equals(precondition);
 			case LtlPackage.TEST_SPECIFICATION__POSTCONDITION:

@@ -8,6 +8,7 @@ import com.leonardo.ltl.ltl.PackagableElement;
 import com.leonardo.ltl.ltl.TestCase;
 import com.leonardo.ltl.ltl.TestExecution;
 import com.leonardo.ltl.ltl.TestRequirement;
+import com.leonardo.ltl.ltl.TestResult;
 import com.leonardo.ltl.ltl.TestSpecification;
 import com.leonardo.ltl.ltl.TestSuite;
 import com.leonardo.ltl.ltl.TestableEntity;
@@ -133,6 +134,13 @@ public class LtlSwitch<T> extends Switch<T> {
 				T result = caseTestCase(testCase);
 				if (result == null) result = caseTestSpecification(testCase);
 				if (result == null) result = casePackagableElement(testCase);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case LtlPackage.TEST_RESULT: {
+				TestResult testResult = (TestResult)theEObject;
+				T result = caseTestResult(testResult);
+				if (result == null) result = casePackagableElement(testResult);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -272,6 +280,21 @@ public class LtlSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTestCase(TestCase object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Test Result</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Test Result</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTestResult(TestResult object) {
 		return null;
 	}
 

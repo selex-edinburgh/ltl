@@ -4,19 +4,24 @@ package com.leonardo.ltl.ltl.impl;
 
 import com.leonardo.ltl.ltl.LtlPackage;
 import com.leonardo.ltl.ltl.TestExecution;
+import com.leonardo.ltl.ltl.TestResult;
 import com.leonardo.ltl.ltl.TestSpecification;
 
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,6 +33,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * <ul>
  *   <li>{@link com.leonardo.ltl.ltl.impl.TestExecutionImpl#getDate <em>Date</em>}</li>
  *   <li>{@link com.leonardo.ltl.ltl.impl.TestExecutionImpl#getTestSpecifications <em>Test Specifications</em>}</li>
+ *   <li>{@link com.leonardo.ltl.ltl.impl.TestExecutionImpl#getTestResults <em>Test Results</em>}</li>
  * </ul>
  *
  * @generated
@@ -62,6 +68,16 @@ public class TestExecutionImpl extends PackagableElementImpl implements TestExec
 	 * @ordered
 	 */
 	protected EList<TestSpecification> testSpecifications;
+
+	/**
+	 * The cached value of the '{@link #getTestResults() <em>Test Results</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTestResults()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<TestResult> testResults;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -124,12 +140,41 @@ public class TestExecutionImpl extends PackagableElementImpl implements TestExec
 	 * @generated
 	 */
 	@Override
+	public EList<TestResult> getTestResults() {
+		if (testResults == null) {
+			testResults = new EObjectContainmentEList<TestResult>(TestResult.class, this, LtlPackage.TEST_EXECUTION__TEST_RESULTS);
+		}
+		return testResults;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case LtlPackage.TEST_EXECUTION__TEST_RESULTS:
+				return ((InternalEList<?>)getTestResults()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case LtlPackage.TEST_EXECUTION__DATE:
 				return getDate();
 			case LtlPackage.TEST_EXECUTION__TEST_SPECIFICATIONS:
 				return getTestSpecifications();
+			case LtlPackage.TEST_EXECUTION__TEST_RESULTS:
+				return getTestResults();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -150,6 +195,10 @@ public class TestExecutionImpl extends PackagableElementImpl implements TestExec
 				getTestSpecifications().clear();
 				getTestSpecifications().addAll((Collection<? extends TestSpecification>)newValue);
 				return;
+			case LtlPackage.TEST_EXECUTION__TEST_RESULTS:
+				getTestResults().clear();
+				getTestResults().addAll((Collection<? extends TestResult>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -168,6 +217,9 @@ public class TestExecutionImpl extends PackagableElementImpl implements TestExec
 			case LtlPackage.TEST_EXECUTION__TEST_SPECIFICATIONS:
 				getTestSpecifications().clear();
 				return;
+			case LtlPackage.TEST_EXECUTION__TEST_RESULTS:
+				getTestResults().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -184,6 +236,8 @@ public class TestExecutionImpl extends PackagableElementImpl implements TestExec
 				return DATE_EDEFAULT == null ? date != null : !DATE_EDEFAULT.equals(date);
 			case LtlPackage.TEST_EXECUTION__TEST_SPECIFICATIONS:
 				return testSpecifications != null && !testSpecifications.isEmpty();
+			case LtlPackage.TEST_EXECUTION__TEST_RESULTS:
+				return testResults != null && !testResults.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

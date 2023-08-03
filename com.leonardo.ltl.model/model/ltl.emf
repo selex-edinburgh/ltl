@@ -39,6 +39,9 @@ class TestExecution extends PackagableElement {
 		
 	@GenModel(documentation="The test specifications performed in the test execution.")
 	ref TestSpecification[*] testSpecifications; 
+	
+	@GenModel(documentation="The test results produced from executing test specifications.")
+	val TestResult[*] testResults;
 }
 
 @GenModel(documentation="a Testable Entity is a concrete object able to be tested. This entity represents the entity that undergoes testing.")
@@ -68,10 +71,10 @@ abstract class TestSpecification  extends PackagableElement {
 	attr String version;
 	
 	@GenModel(documentation="The entities that are being tested")
-	ref TestableEntity[*] testableEntities;
+	ref TestableEntity[*] tests;
 	
 	@GenModel(documentation="The test requirements that the test specification addresses.")
-	ref TestRequirement[*] testRequirements;
+	ref TestRequirement[*] demonstratesSatisfactionOf;
 	
 	@GenModel(documentation="The precondition that must be set up before running test specification.")
 	attr String precondition;
@@ -98,6 +101,17 @@ class TestCase extends TestSpecification {
 	
 	@GenModel(documentation="The expected result of the test case.")
 	attr Object expectedResult;
+
+}
+
+@GenModel(documentation="This entitiy captures the results of test cases after execution.")
+class TestResult extends PackagableElement {
+	
+	@GenModel(documentation="The date time the test result is obtained.")
+	attr String date;
+	
+	@GenModel(documentation="The executed test case.")
+	ref TestCase executedTestCase;
 	
 	@GenModel(documentation="The actual result of the test case.")
 	attr Object actualResult;

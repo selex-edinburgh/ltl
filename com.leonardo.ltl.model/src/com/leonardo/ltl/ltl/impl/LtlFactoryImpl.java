@@ -8,6 +8,7 @@ import com.leonardo.ltl.ltl.Model;
 import com.leonardo.ltl.ltl.TestCase;
 import com.leonardo.ltl.ltl.TestExecution;
 import com.leonardo.ltl.ltl.TestRequirement;
+import com.leonardo.ltl.ltl.TestResult;
 import com.leonardo.ltl.ltl.TestSuite;
 import com.leonardo.ltl.ltl.TestableEntity;
 
@@ -70,6 +71,7 @@ public class LtlFactoryImpl extends EFactoryImpl implements LtlFactory {
 			case LtlPackage.TEST_REQUIREMENT: return createTestRequirement();
 			case LtlPackage.TEST_SUITE: return createTestSuite();
 			case LtlPackage.TEST_CASE: return createTestCase();
+			case LtlPackage.TEST_RESULT: return createTestResult();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -150,6 +152,17 @@ public class LtlFactoryImpl extends EFactoryImpl implements LtlFactory {
 	public TestCase createTestCase() {
 		TestCaseImpl testCase = new TestCaseImpl();
 		return testCase;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public TestResult createTestResult() {
+		TestResultImpl testResult = new TestResultImpl();
+		return testResult;
 	}
 
 	/**

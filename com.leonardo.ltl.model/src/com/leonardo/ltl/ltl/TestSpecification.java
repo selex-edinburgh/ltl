@@ -19,8 +19,8 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link com.leonardo.ltl.ltl.TestSpecification#getDate <em>Date</em>}</li>
  *   <li>{@link com.leonardo.ltl.ltl.TestSpecification#getVersion <em>Version</em>}</li>
- *   <li>{@link com.leonardo.ltl.ltl.TestSpecification#getTestableEntities <em>Testable Entities</em>}</li>
- *   <li>{@link com.leonardo.ltl.ltl.TestSpecification#getTestRequirements <em>Test Requirements</em>}</li>
+ *   <li>{@link com.leonardo.ltl.ltl.TestSpecification#getTests <em>Tests</em>}</li>
+ *   <li>{@link com.leonardo.ltl.ltl.TestSpecification#getDemonstratesSatisfactionOf <em>Demonstrates Satisfaction Of</em>}</li>
  *   <li>{@link com.leonardo.ltl.ltl.TestSpecification#getPrecondition <em>Precondition</em>}</li>
  *   <li>{@link com.leonardo.ltl.ltl.TestSpecification#getPostcondition <em>Postcondition</em>}</li>
  * </ul>
@@ -81,34 +81,34 @@ public interface TestSpecification extends PackagableElement {
 	void setVersion(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Testable Entities</b></em>' reference list.
+	 * Returns the value of the '<em><b>Tests</b></em>' reference list.
 	 * The list contents are of type {@link com.leonardo.ltl.ltl.TestableEntity}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The entities that are being tested
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Testable Entities</em>' reference list.
-	 * @see com.leonardo.ltl.ltl.LtlPackage#getTestSpecification_TestableEntities()
+	 * @return the value of the '<em>Tests</em>' reference list.
+	 * @see com.leonardo.ltl.ltl.LtlPackage#getTestSpecification_Tests()
 	 * @model
 	 * @generated
 	 */
-	EList<TestableEntity> getTestableEntities();
+	EList<TestableEntity> getTests();
 
 	/**
-	 * Returns the value of the '<em><b>Test Requirements</b></em>' reference list.
+	 * Returns the value of the '<em><b>Demonstrates Satisfaction Of</b></em>' reference list.
 	 * The list contents are of type {@link com.leonardo.ltl.ltl.TestRequirement}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The test requirements that the test specification addresses.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Test Requirements</em>' reference list.
-	 * @see com.leonardo.ltl.ltl.LtlPackage#getTestSpecification_TestRequirements()
+	 * @return the value of the '<em>Demonstrates Satisfaction Of</em>' reference list.
+	 * @see com.leonardo.ltl.ltl.LtlPackage#getTestSpecification_DemonstratesSatisfactionOf()
 	 * @model
 	 * @generated
 	 */
-	EList<TestRequirement> getTestRequirements();
+	EList<TestRequirement> getDemonstratesSatisfactionOf();
 
 	/**
 	 * Returns the value of the '<em><b>Precondition</b></em>' attribute.

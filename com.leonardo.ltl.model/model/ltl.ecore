@@ -63,6 +63,12 @@
         <details key="documentation" value="The test specifications performed in the test execution."/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="testResults" upperBound="-1"
+        eType="#//TestResult" containment="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The test results produced from executing test specifications."/>
+      </eAnnotations>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TestableEntity" eSuperTypes="#//PackagableElement">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
@@ -103,14 +109,14 @@
         <details key="documentation" value="The version of the test specification"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="testableEntities" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tests" upperBound="-1"
         eType="#//TestableEntity">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The entities that are being tested"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="testRequirements" upperBound="-1"
-        eType="#//TestRequirement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="demonstratesSatisfactionOf"
+        upperBound="-1" eType="#//TestRequirement">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The test requirements that the test specification addresses."/>
       </eAnnotations>
@@ -155,6 +161,21 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="expectedResult" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The expected result of the test case."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TestResult" eSuperTypes="#//PackagableElement">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="This entitiy captures the results of test cases after execution."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="date" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The date time the test result is obtained."/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="executedTestCase" eType="#//TestCase">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="The executed test case."/>
       </eAnnotations>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="actualResult" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaObject">

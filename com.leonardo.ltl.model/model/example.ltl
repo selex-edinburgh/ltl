@@ -26,12 +26,12 @@ package Ecore2OmlTest
 		postcondition "The target OML model/metamodel persisted and loaded"
 		method "Check Syntax Correctness by executing OML gradle checking script"
 		expectedResult "No Errors"
-		actualResult "1 Error"
-		passed false
-		incident "1 error"
 		inputs "SourceFile", "TargetFile" 
 		entities
 			Ecore2OmlGenerator 
+		end
+		requirements
+			Correctness01	
 		end
 	end
 	
@@ -43,10 +43,13 @@ package Ecore2OmlTest
 		postcondition "The target OML model/metamodel persisted and loaded"
 		method "Check Syntax Correctness by executing OML gradle checking script"
 		expectedResult "No Errors"
-		actualResult "No Errors"
-		passed true
-		incident "No Incident"
-		inputs "SourceFile", "TargetFile" 
+		inputs "SourceFile", "TargetFile"
+		entities
+			Ecore2OmlGenerator 
+		end
+		requirements
+			Correctness01
+		end 
 	end
 	
 	case testPerformance
@@ -57,12 +60,12 @@ package Ecore2OmlTest
 		postcondition "The target OML model/metamodel persisted"
 		method "Output Rate"
 		expectedResult "200 kbps/second"
-		actualResult "300 kbps/second"
-		passed true
-		incident "No Incident"
 		inputs "SourceFile", "TargetFile" 
 		entities
-			Ecore2OmlGenerator
+			Ecore2OmlGenerator 
+		end
+		requirements
+			Performance01
 		end
 	end
 	

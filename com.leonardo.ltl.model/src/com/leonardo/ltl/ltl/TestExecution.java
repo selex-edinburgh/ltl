@@ -19,6 +19,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link com.leonardo.ltl.ltl.TestExecution#getDate <em>Date</em>}</li>
  *   <li>{@link com.leonardo.ltl.ltl.TestExecution#getTestSpecifications <em>Test Specifications</em>}</li>
+ *   <li>{@link com.leonardo.ltl.ltl.TestExecution#getTestResults <em>Test Results</em>}</li>
  * </ul>
  *
  * @see com.leonardo.ltl.ltl.LtlPackage#getTestExecution()
@@ -65,5 +66,20 @@ public interface TestExecution extends PackagableElement {
 	 * @generated
 	 */
 	EList<TestSpecification> getTestSpecifications();
+
+	/**
+	 * Returns the value of the '<em><b>Test Results</b></em>' containment reference list.
+	 * The list contents are of type {@link com.leonardo.ltl.ltl.TestResult}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The test results produced from executing test specifications.
+	 * <!-- end-model-doc -->
+	 * @return the value of the '<em>Test Results</em>' containment reference list.
+	 * @see com.leonardo.ltl.ltl.LtlPackage#getTestExecution_TestResults()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<TestResult> getTestResults();
 
 } // TestExecution

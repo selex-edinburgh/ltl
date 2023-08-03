@@ -8,6 +8,7 @@ import com.leonardo.ltl.ltl.PackagableElement;
 import com.leonardo.ltl.ltl.TestCase;
 import com.leonardo.ltl.ltl.TestExecution;
 import com.leonardo.ltl.ltl.TestRequirement;
+import com.leonardo.ltl.ltl.TestResult;
 import com.leonardo.ltl.ltl.TestSpecification;
 import com.leonardo.ltl.ltl.TestSuite;
 import com.leonardo.ltl.ltl.TestableEntity;
@@ -110,6 +111,10 @@ public class LtlAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseTestCase(TestCase object) {
 				return createTestCaseAdapter();
+			}
+			@Override
+			public Adapter caseTestResult(TestResult object) {
+				return createTestResultAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -254,6 +259,20 @@ public class LtlAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTestCaseAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link com.leonardo.ltl.ltl.TestResult <em>Test Result</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see com.leonardo.ltl.ltl.TestResult
+	 * @generated
+	 */
+	public Adapter createTestResultAdapter() {
 		return null;
 	}
 

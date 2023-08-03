@@ -213,13 +213,22 @@ public interface LtlPackage extends EPackage {
 	int TEST_EXECUTION__TEST_SPECIFICATIONS = PACKAGABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Test Results</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEST_EXECUTION__TEST_RESULTS = PACKAGABLE_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Test Execution</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_EXECUTION_FEATURE_COUNT = PACKAGABLE_ELEMENT_FEATURE_COUNT + 2;
+	int TEST_EXECUTION_FEATURE_COUNT = PACKAGABLE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link com.leonardo.ltl.ltl.impl.TestableEntityImpl <em>Testable Entity</em>}' class.
@@ -369,22 +378,22 @@ public interface LtlPackage extends EPackage {
 	int TEST_SPECIFICATION__VERSION = PACKAGABLE_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Testable Entities</b></em>' reference list.
+	 * The feature id for the '<em><b>Tests</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_SPECIFICATION__TESTABLE_ENTITIES = PACKAGABLE_ELEMENT_FEATURE_COUNT + 2;
+	int TEST_SPECIFICATION__TESTS = PACKAGABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Test Requirements</b></em>' reference list.
+	 * The feature id for the '<em><b>Demonstrates Satisfaction Of</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_SPECIFICATION__TEST_REQUIREMENTS = PACKAGABLE_ELEMENT_FEATURE_COUNT + 3;
+	int TEST_SPECIFICATION__DEMONSTRATES_SATISFACTION_OF = PACKAGABLE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Precondition</b></em>' attribute.
@@ -460,22 +469,22 @@ public interface LtlPackage extends EPackage {
 	int TEST_SUITE__VERSION = TEST_SPECIFICATION__VERSION;
 
 	/**
-	 * The feature id for the '<em><b>Testable Entities</b></em>' reference list.
+	 * The feature id for the '<em><b>Tests</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_SUITE__TESTABLE_ENTITIES = TEST_SPECIFICATION__TESTABLE_ENTITIES;
+	int TEST_SUITE__TESTS = TEST_SPECIFICATION__TESTS;
 
 	/**
-	 * The feature id for the '<em><b>Test Requirements</b></em>' reference list.
+	 * The feature id for the '<em><b>Demonstrates Satisfaction Of</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_SUITE__TEST_REQUIREMENTS = TEST_SPECIFICATION__TEST_REQUIREMENTS;
+	int TEST_SUITE__DEMONSTRATES_SATISFACTION_OF = TEST_SPECIFICATION__DEMONSTRATES_SATISFACTION_OF;
 
 	/**
 	 * The feature id for the '<em><b>Precondition</b></em>' attribute.
@@ -560,22 +569,22 @@ public interface LtlPackage extends EPackage {
 	int TEST_CASE__VERSION = TEST_SPECIFICATION__VERSION;
 
 	/**
-	 * The feature id for the '<em><b>Testable Entities</b></em>' reference list.
+	 * The feature id for the '<em><b>Tests</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_CASE__TESTABLE_ENTITIES = TEST_SPECIFICATION__TESTABLE_ENTITIES;
+	int TEST_CASE__TESTS = TEST_SPECIFICATION__TESTS;
 
 	/**
-	 * The feature id for the '<em><b>Test Requirements</b></em>' reference list.
+	 * The feature id for the '<em><b>Demonstrates Satisfaction Of</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_CASE__TEST_REQUIREMENTS = TEST_SPECIFICATION__TEST_REQUIREMENTS;
+	int TEST_CASE__DEMONSTRATES_SATISFACTION_OF = TEST_SPECIFICATION__DEMONSTRATES_SATISFACTION_OF;
 
 	/**
 	 * The feature id for the '<em><b>Precondition</b></em>' attribute.
@@ -623,13 +632,69 @@ public interface LtlPackage extends EPackage {
 	int TEST_CASE__EXPECTED_RESULT = TEST_SPECIFICATION_FEATURE_COUNT + 2;
 
 	/**
+	 * The number of structural features of the '<em>Test Case</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEST_CASE_FEATURE_COUNT = TEST_SPECIFICATION_FEATURE_COUNT + 3;
+
+
+	/**
+	 * The meta object id for the '{@link com.leonardo.ltl.ltl.impl.TestResultImpl <em>Test Result</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see com.leonardo.ltl.ltl.impl.TestResultImpl
+	 * @see com.leonardo.ltl.ltl.impl.LtlPackageImpl#getTestResult()
+	 * @generated
+	 */
+	int TEST_RESULT = 9;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEST_RESULT__NAME = PACKAGABLE_ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEST_RESULT__DESCRIPTION = PACKAGABLE_ELEMENT__DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEST_RESULT__DATE = PACKAGABLE_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Executed Test Case</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEST_RESULT__EXECUTED_TEST_CASE = PACKAGABLE_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
 	 * The feature id for the '<em><b>Actual Result</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_CASE__ACTUAL_RESULT = TEST_SPECIFICATION_FEATURE_COUNT + 3;
+	int TEST_RESULT__ACTUAL_RESULT = PACKAGABLE_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Passed</b></em>' attribute.
@@ -638,7 +703,7 @@ public interface LtlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_CASE__PASSED = TEST_SPECIFICATION_FEATURE_COUNT + 4;
+	int TEST_RESULT__PASSED = PACKAGABLE_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Incident</b></em>' attribute.
@@ -647,16 +712,16 @@ public interface LtlPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_CASE__INCIDENT = TEST_SPECIFICATION_FEATURE_COUNT + 5;
+	int TEST_RESULT__INCIDENT = PACKAGABLE_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
-	 * The number of structural features of the '<em>Test Case</em>' class.
+	 * The number of structural features of the '<em>Test Result</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_CASE_FEATURE_COUNT = TEST_SPECIFICATION_FEATURE_COUNT + 6;
+	int TEST_RESULT_FEATURE_COUNT = PACKAGABLE_ELEMENT_FEATURE_COUNT + 5;
 
 
 	/**
@@ -788,6 +853,17 @@ public interface LtlPackage extends EPackage {
 	EReference getTestExecution_TestSpecifications();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link com.leonardo.ltl.ltl.TestExecution#getTestResults <em>Test Results</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Test Results</em>'.
+	 * @see com.leonardo.ltl.ltl.TestExecution#getTestResults()
+	 * @see #getTestExecution()
+	 * @generated
+	 */
+	EReference getTestExecution_TestResults();
+
+	/**
 	 * Returns the meta object for class '{@link com.leonardo.ltl.ltl.TestableEntity <em>Testable Entity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -873,26 +949,26 @@ public interface LtlPackage extends EPackage {
 	EAttribute getTestSpecification_Version();
 
 	/**
-	 * Returns the meta object for the reference list '{@link com.leonardo.ltl.ltl.TestSpecification#getTestableEntities <em>Testable Entities</em>}'.
+	 * Returns the meta object for the reference list '{@link com.leonardo.ltl.ltl.TestSpecification#getTests <em>Tests</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Testable Entities</em>'.
-	 * @see com.leonardo.ltl.ltl.TestSpecification#getTestableEntities()
+	 * @return the meta object for the reference list '<em>Tests</em>'.
+	 * @see com.leonardo.ltl.ltl.TestSpecification#getTests()
 	 * @see #getTestSpecification()
 	 * @generated
 	 */
-	EReference getTestSpecification_TestableEntities();
+	EReference getTestSpecification_Tests();
 
 	/**
-	 * Returns the meta object for the reference list '{@link com.leonardo.ltl.ltl.TestSpecification#getTestRequirements <em>Test Requirements</em>}'.
+	 * Returns the meta object for the reference list '{@link com.leonardo.ltl.ltl.TestSpecification#getDemonstratesSatisfactionOf <em>Demonstrates Satisfaction Of</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Test Requirements</em>'.
-	 * @see com.leonardo.ltl.ltl.TestSpecification#getTestRequirements()
+	 * @return the meta object for the reference list '<em>Demonstrates Satisfaction Of</em>'.
+	 * @see com.leonardo.ltl.ltl.TestSpecification#getDemonstratesSatisfactionOf()
 	 * @see #getTestSpecification()
 	 * @generated
 	 */
-	EReference getTestSpecification_TestRequirements();
+	EReference getTestSpecification_DemonstratesSatisfactionOf();
 
 	/**
 	 * Returns the meta object for the attribute '{@link com.leonardo.ltl.ltl.TestSpecification#getPrecondition <em>Precondition</em>}'.
@@ -981,37 +1057,69 @@ public interface LtlPackage extends EPackage {
 	EAttribute getTestCase_ExpectedResult();
 
 	/**
-	 * Returns the meta object for the attribute '{@link com.leonardo.ltl.ltl.TestCase#getActualResult <em>Actual Result</em>}'.
+	 * Returns the meta object for class '{@link com.leonardo.ltl.ltl.TestResult <em>Test Result</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Test Result</em>'.
+	 * @see com.leonardo.ltl.ltl.TestResult
+	 * @generated
+	 */
+	EClass getTestResult();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.leonardo.ltl.ltl.TestResult#getDate <em>Date</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Date</em>'.
+	 * @see com.leonardo.ltl.ltl.TestResult#getDate()
+	 * @see #getTestResult()
+	 * @generated
+	 */
+	EAttribute getTestResult_Date();
+
+	/**
+	 * Returns the meta object for the reference '{@link com.leonardo.ltl.ltl.TestResult#getExecutedTestCase <em>Executed Test Case</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Executed Test Case</em>'.
+	 * @see com.leonardo.ltl.ltl.TestResult#getExecutedTestCase()
+	 * @see #getTestResult()
+	 * @generated
+	 */
+	EReference getTestResult_ExecutedTestCase();
+
+	/**
+	 * Returns the meta object for the attribute '{@link com.leonardo.ltl.ltl.TestResult#getActualResult <em>Actual Result</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Actual Result</em>'.
-	 * @see com.leonardo.ltl.ltl.TestCase#getActualResult()
-	 * @see #getTestCase()
+	 * @see com.leonardo.ltl.ltl.TestResult#getActualResult()
+	 * @see #getTestResult()
 	 * @generated
 	 */
-	EAttribute getTestCase_ActualResult();
+	EAttribute getTestResult_ActualResult();
 
 	/**
-	 * Returns the meta object for the attribute '{@link com.leonardo.ltl.ltl.TestCase#isPassed <em>Passed</em>}'.
+	 * Returns the meta object for the attribute '{@link com.leonardo.ltl.ltl.TestResult#isPassed <em>Passed</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Passed</em>'.
-	 * @see com.leonardo.ltl.ltl.TestCase#isPassed()
-	 * @see #getTestCase()
+	 * @see com.leonardo.ltl.ltl.TestResult#isPassed()
+	 * @see #getTestResult()
 	 * @generated
 	 */
-	EAttribute getTestCase_Passed();
+	EAttribute getTestResult_Passed();
 
 	/**
-	 * Returns the meta object for the attribute '{@link com.leonardo.ltl.ltl.TestCase#getIncident <em>Incident</em>}'.
+	 * Returns the meta object for the attribute '{@link com.leonardo.ltl.ltl.TestResult#getIncident <em>Incident</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Incident</em>'.
-	 * @see com.leonardo.ltl.ltl.TestCase#getIncident()
-	 * @see #getTestCase()
+	 * @see com.leonardo.ltl.ltl.TestResult#getIncident()
+	 * @see #getTestResult()
 	 * @generated
 	 */
-	EAttribute getTestCase_Incident();
+	EAttribute getTestResult_Incident();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1140,6 +1248,14 @@ public interface LtlPackage extends EPackage {
 		EReference TEST_EXECUTION__TEST_SPECIFICATIONS = eINSTANCE.getTestExecution_TestSpecifications();
 
 		/**
+		 * The meta object literal for the '<em><b>Test Results</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TEST_EXECUTION__TEST_RESULTS = eINSTANCE.getTestExecution_TestResults();
+
+		/**
 		 * The meta object literal for the '{@link com.leonardo.ltl.ltl.impl.TestableEntityImpl <em>Testable Entity</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1210,20 +1326,20 @@ public interface LtlPackage extends EPackage {
 		EAttribute TEST_SPECIFICATION__VERSION = eINSTANCE.getTestSpecification_Version();
 
 		/**
-		 * The meta object literal for the '<em><b>Testable Entities</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Tests</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TEST_SPECIFICATION__TESTABLE_ENTITIES = eINSTANCE.getTestSpecification_TestableEntities();
+		EReference TEST_SPECIFICATION__TESTS = eINSTANCE.getTestSpecification_Tests();
 
 		/**
-		 * The meta object literal for the '<em><b>Test Requirements</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Demonstrates Satisfaction Of</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TEST_SPECIFICATION__TEST_REQUIREMENTS = eINSTANCE.getTestSpecification_TestRequirements();
+		EReference TEST_SPECIFICATION__DEMONSTRATES_SATISFACTION_OF = eINSTANCE.getTestSpecification_DemonstratesSatisfactionOf();
 
 		/**
 		 * The meta object literal for the '<em><b>Precondition</b></em>' attribute feature.
@@ -1294,12 +1410,38 @@ public interface LtlPackage extends EPackage {
 		EAttribute TEST_CASE__EXPECTED_RESULT = eINSTANCE.getTestCase_ExpectedResult();
 
 		/**
+		 * The meta object literal for the '{@link com.leonardo.ltl.ltl.impl.TestResultImpl <em>Test Result</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see com.leonardo.ltl.ltl.impl.TestResultImpl
+		 * @see com.leonardo.ltl.ltl.impl.LtlPackageImpl#getTestResult()
+		 * @generated
+		 */
+		EClass TEST_RESULT = eINSTANCE.getTestResult();
+
+		/**
+		 * The meta object literal for the '<em><b>Date</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TEST_RESULT__DATE = eINSTANCE.getTestResult_Date();
+
+		/**
+		 * The meta object literal for the '<em><b>Executed Test Case</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TEST_RESULT__EXECUTED_TEST_CASE = eINSTANCE.getTestResult_ExecutedTestCase();
+
+		/**
 		 * The meta object literal for the '<em><b>Actual Result</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TEST_CASE__ACTUAL_RESULT = eINSTANCE.getTestCase_ActualResult();
+		EAttribute TEST_RESULT__ACTUAL_RESULT = eINSTANCE.getTestResult_ActualResult();
 
 		/**
 		 * The meta object literal for the '<em><b>Passed</b></em>' attribute feature.
@@ -1307,7 +1449,7 @@ public interface LtlPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TEST_CASE__PASSED = eINSTANCE.getTestCase_Passed();
+		EAttribute TEST_RESULT__PASSED = eINSTANCE.getTestResult_Passed();
 
 		/**
 		 * The meta object literal for the '<em><b>Incident</b></em>' attribute feature.
@@ -1315,7 +1457,7 @@ public interface LtlPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TEST_CASE__INCIDENT = eINSTANCE.getTestCase_Incident();
+		EAttribute TEST_RESULT__INCIDENT = eINSTANCE.getTestResult_Incident();
 
 	}
 
