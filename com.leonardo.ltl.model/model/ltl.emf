@@ -35,7 +35,7 @@ abstract class PackagableElement {
 class TestExecution extends PackagableElement {
 
 	@GenModel(documentation="The date time the test execution is performed.")
-	attr String date;
+	attr Date executionDate;
 		
 	@GenModel(documentation="The test specifications performed in the test execution.")
 	ref TestSpecification[*] testSpecifications; 
@@ -65,7 +65,7 @@ class TestRequirement extends PackagableElement  {
 abstract class TestSpecification  extends PackagableElement {
 
 	@GenModel(documentation="The date time the test specification is executed")
-	attr String date;
+	attr Date creationDate;
 	
 	@GenModel(documentation="The version of the test specification")
 	attr String version;
@@ -108,7 +108,7 @@ class TestCase extends TestSpecification {
 class TestResult extends PackagableElement {
 	
 	@GenModel(documentation="The date time the test result is obtained.")
-	attr String date;
+	attr Date resultDate;
 	
 	@GenModel(documentation="The executed test case.")
 	ref TestCase executedTestCase;

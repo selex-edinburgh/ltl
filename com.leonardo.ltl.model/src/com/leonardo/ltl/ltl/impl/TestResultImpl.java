@@ -7,6 +7,7 @@ import com.leonardo.ltl.ltl.TestCase;
 import com.leonardo.ltl.ltl.TestResult;
 import com.leonardo.ltl.ltl.TestSpecification;
 
+import java.util.Date;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -22,7 +23,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link com.leonardo.ltl.ltl.impl.TestResultImpl#getDate <em>Date</em>}</li>
+ *   <li>{@link com.leonardo.ltl.ltl.impl.TestResultImpl#getResultDate <em>Result Date</em>}</li>
  *   <li>{@link com.leonardo.ltl.ltl.impl.TestResultImpl#getExecutedTestCase <em>Executed Test Case</em>}</li>
  *   <li>{@link com.leonardo.ltl.ltl.impl.TestResultImpl#getActualResult <em>Actual Result</em>}</li>
  *   <li>{@link com.leonardo.ltl.ltl.impl.TestResultImpl#isPassed <em>Passed</em>}</li>
@@ -33,24 +34,24 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class TestResultImpl extends PackagableElementImpl implements TestResult {
 	/**
-	 * The default value of the '{@link #getDate() <em>Date</em>}' attribute.
+	 * The default value of the '{@link #getResultDate() <em>Result Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDate()
+	 * @see #getResultDate()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String DATE_EDEFAULT = null;
+	protected static final Date RESULT_DATE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getDate() <em>Date</em>}' attribute.
+	 * The cached value of the '{@link #getResultDate() <em>Result Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDate()
+	 * @see #getResultDate()
 	 * @generated
 	 * @ordered
 	 */
-	protected String date = DATE_EDEFAULT;
+	protected Date resultDate = RESULT_DATE_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getExecutedTestCase() <em>Executed Test Case</em>}' reference.
@@ -147,8 +148,8 @@ public class TestResultImpl extends PackagableElementImpl implements TestResult 
 	 * @generated
 	 */
 	@Override
-	public String getDate() {
-		return date;
+	public Date getResultDate() {
+		return resultDate;
 	}
 
 	/**
@@ -157,11 +158,11 @@ public class TestResultImpl extends PackagableElementImpl implements TestResult 
 	 * @generated
 	 */
 	@Override
-	public void setDate(String newDate) {
-		String oldDate = date;
-		date = newDate;
+	public void setResultDate(Date newResultDate) {
+		Date oldResultDate = resultDate;
+		resultDate = newResultDate;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LtlPackage.TEST_RESULT__DATE, oldDate, date));
+			eNotify(new ENotificationImpl(this, Notification.SET, LtlPackage.TEST_RESULT__RESULT_DATE, oldResultDate, resultDate));
 	}
 
 	/**
@@ -281,8 +282,8 @@ public class TestResultImpl extends PackagableElementImpl implements TestResult 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case LtlPackage.TEST_RESULT__DATE:
-				return getDate();
+			case LtlPackage.TEST_RESULT__RESULT_DATE:
+				return getResultDate();
 			case LtlPackage.TEST_RESULT__EXECUTED_TEST_CASE:
 				if (resolve) return getExecutedTestCase();
 				return basicGetExecutedTestCase();
@@ -304,8 +305,8 @@ public class TestResultImpl extends PackagableElementImpl implements TestResult 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LtlPackage.TEST_RESULT__DATE:
-				setDate((String)newValue);
+			case LtlPackage.TEST_RESULT__RESULT_DATE:
+				setResultDate((Date)newValue);
 				return;
 			case LtlPackage.TEST_RESULT__EXECUTED_TEST_CASE:
 				setExecutedTestCase((TestCase)newValue);
@@ -331,8 +332,8 @@ public class TestResultImpl extends PackagableElementImpl implements TestResult 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case LtlPackage.TEST_RESULT__DATE:
-				setDate(DATE_EDEFAULT);
+			case LtlPackage.TEST_RESULT__RESULT_DATE:
+				setResultDate(RESULT_DATE_EDEFAULT);
 				return;
 			case LtlPackage.TEST_RESULT__EXECUTED_TEST_CASE:
 				setExecutedTestCase((TestCase)null);
@@ -358,8 +359,8 @@ public class TestResultImpl extends PackagableElementImpl implements TestResult 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case LtlPackage.TEST_RESULT__DATE:
-				return DATE_EDEFAULT == null ? date != null : !DATE_EDEFAULT.equals(date);
+			case LtlPackage.TEST_RESULT__RESULT_DATE:
+				return RESULT_DATE_EDEFAULT == null ? resultDate != null : !RESULT_DATE_EDEFAULT.equals(resultDate);
 			case LtlPackage.TEST_RESULT__EXECUTED_TEST_CASE:
 				return executedTestCase != null;
 			case LtlPackage.TEST_RESULT__ACTUAL_RESULT:
@@ -382,8 +383,8 @@ public class TestResultImpl extends PackagableElementImpl implements TestResult 
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (date: ");
-		result.append(date);
+		result.append(" (resultDate: ");
+		result.append(resultDate);
 		result.append(", actualResult: ");
 		result.append(actualResult);
 		result.append(", passed: ");

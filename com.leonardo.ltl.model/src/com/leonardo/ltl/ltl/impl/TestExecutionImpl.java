@@ -9,6 +9,7 @@ import com.leonardo.ltl.ltl.TestSpecification;
 
 import java.util.Collection;
 
+import java.util.Date;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -31,7 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link com.leonardo.ltl.ltl.impl.TestExecutionImpl#getDate <em>Date</em>}</li>
+ *   <li>{@link com.leonardo.ltl.ltl.impl.TestExecutionImpl#getExecutionDate <em>Execution Date</em>}</li>
  *   <li>{@link com.leonardo.ltl.ltl.impl.TestExecutionImpl#getTestSpecifications <em>Test Specifications</em>}</li>
  *   <li>{@link com.leonardo.ltl.ltl.impl.TestExecutionImpl#getTestResults <em>Test Results</em>}</li>
  * </ul>
@@ -40,24 +41,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class TestExecutionImpl extends PackagableElementImpl implements TestExecution {
 	/**
-	 * The default value of the '{@link #getDate() <em>Date</em>}' attribute.
+	 * The default value of the '{@link #getExecutionDate() <em>Execution Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDate()
+	 * @see #getExecutionDate()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String DATE_EDEFAULT = null;
+	protected static final Date EXECUTION_DATE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getDate() <em>Date</em>}' attribute.
+	 * The cached value of the '{@link #getExecutionDate() <em>Execution Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDate()
+	 * @see #getExecutionDate()
 	 * @generated
 	 * @ordered
 	 */
-	protected String date = DATE_EDEFAULT;
+	protected Date executionDate = EXECUTION_DATE_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getTestSpecifications() <em>Test Specifications</em>}' reference list.
@@ -104,8 +105,8 @@ public class TestExecutionImpl extends PackagableElementImpl implements TestExec
 	 * @generated
 	 */
 	@Override
-	public String getDate() {
-		return date;
+	public Date getExecutionDate() {
+		return executionDate;
 	}
 
 	/**
@@ -114,11 +115,11 @@ public class TestExecutionImpl extends PackagableElementImpl implements TestExec
 	 * @generated
 	 */
 	@Override
-	public void setDate(String newDate) {
-		String oldDate = date;
-		date = newDate;
+	public void setExecutionDate(Date newExecutionDate) {
+		Date oldExecutionDate = executionDate;
+		executionDate = newExecutionDate;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LtlPackage.TEST_EXECUTION__DATE, oldDate, date));
+			eNotify(new ENotificationImpl(this, Notification.SET, LtlPackage.TEST_EXECUTION__EXECUTION_DATE, oldExecutionDate, executionDate));
 	}
 
 	/**
@@ -169,8 +170,8 @@ public class TestExecutionImpl extends PackagableElementImpl implements TestExec
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case LtlPackage.TEST_EXECUTION__DATE:
-				return getDate();
+			case LtlPackage.TEST_EXECUTION__EXECUTION_DATE:
+				return getExecutionDate();
 			case LtlPackage.TEST_EXECUTION__TEST_SPECIFICATIONS:
 				return getTestSpecifications();
 			case LtlPackage.TEST_EXECUTION__TEST_RESULTS:
@@ -188,8 +189,8 @@ public class TestExecutionImpl extends PackagableElementImpl implements TestExec
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LtlPackage.TEST_EXECUTION__DATE:
-				setDate((String)newValue);
+			case LtlPackage.TEST_EXECUTION__EXECUTION_DATE:
+				setExecutionDate((Date)newValue);
 				return;
 			case LtlPackage.TEST_EXECUTION__TEST_SPECIFICATIONS:
 				getTestSpecifications().clear();
@@ -211,8 +212,8 @@ public class TestExecutionImpl extends PackagableElementImpl implements TestExec
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case LtlPackage.TEST_EXECUTION__DATE:
-				setDate(DATE_EDEFAULT);
+			case LtlPackage.TEST_EXECUTION__EXECUTION_DATE:
+				setExecutionDate(EXECUTION_DATE_EDEFAULT);
 				return;
 			case LtlPackage.TEST_EXECUTION__TEST_SPECIFICATIONS:
 				getTestSpecifications().clear();
@@ -232,8 +233,8 @@ public class TestExecutionImpl extends PackagableElementImpl implements TestExec
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case LtlPackage.TEST_EXECUTION__DATE:
-				return DATE_EDEFAULT == null ? date != null : !DATE_EDEFAULT.equals(date);
+			case LtlPackage.TEST_EXECUTION__EXECUTION_DATE:
+				return EXECUTION_DATE_EDEFAULT == null ? executionDate != null : !EXECUTION_DATE_EDEFAULT.equals(executionDate);
 			case LtlPackage.TEST_EXECUTION__TEST_SPECIFICATIONS:
 				return testSpecifications != null && !testSpecifications.isEmpty();
 			case LtlPackage.TEST_EXECUTION__TEST_RESULTS:
@@ -252,8 +253,8 @@ public class TestExecutionImpl extends PackagableElementImpl implements TestExec
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (date: ");
-		result.append(date);
+		result.append(" (executionDate: ");
+		result.append(executionDate);
 		result.append(')');
 		return result.toString();
 	}

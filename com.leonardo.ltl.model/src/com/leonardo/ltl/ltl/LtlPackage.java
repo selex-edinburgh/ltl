@@ -195,13 +195,13 @@ public interface LtlPackage extends EPackage {
 	int TEST_EXECUTION__DESCRIPTION = PACKAGABLE_ELEMENT__DESCRIPTION;
 
 	/**
-	 * The feature id for the '<em><b>Date</b></em>' attribute.
+	 * The feature id for the '<em><b>Execution Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_EXECUTION__DATE = PACKAGABLE_ELEMENT_FEATURE_COUNT + 0;
+	int TEST_EXECUTION__EXECUTION_DATE = PACKAGABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Test Specifications</b></em>' reference list.
@@ -360,13 +360,13 @@ public interface LtlPackage extends EPackage {
 	int TEST_SPECIFICATION__DESCRIPTION = PACKAGABLE_ELEMENT__DESCRIPTION;
 
 	/**
-	 * The feature id for the '<em><b>Date</b></em>' attribute.
+	 * The feature id for the '<em><b>Creation Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_SPECIFICATION__DATE = PACKAGABLE_ELEMENT_FEATURE_COUNT + 0;
+	int TEST_SPECIFICATION__CREATION_DATE = PACKAGABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Version</b></em>' attribute.
@@ -451,13 +451,13 @@ public interface LtlPackage extends EPackage {
 	int TEST_SUITE__DESCRIPTION = TEST_SPECIFICATION__DESCRIPTION;
 
 	/**
-	 * The feature id for the '<em><b>Date</b></em>' attribute.
+	 * The feature id for the '<em><b>Creation Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_SUITE__DATE = TEST_SPECIFICATION__DATE;
+	int TEST_SUITE__CREATION_DATE = TEST_SPECIFICATION__CREATION_DATE;
 
 	/**
 	 * The feature id for the '<em><b>Version</b></em>' attribute.
@@ -551,13 +551,13 @@ public interface LtlPackage extends EPackage {
 	int TEST_CASE__DESCRIPTION = TEST_SPECIFICATION__DESCRIPTION;
 
 	/**
-	 * The feature id for the '<em><b>Date</b></em>' attribute.
+	 * The feature id for the '<em><b>Creation Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_CASE__DATE = TEST_SPECIFICATION__DATE;
+	int TEST_CASE__CREATION_DATE = TEST_SPECIFICATION__CREATION_DATE;
 
 	/**
 	 * The feature id for the '<em><b>Version</b></em>' attribute.
@@ -670,13 +670,13 @@ public interface LtlPackage extends EPackage {
 	int TEST_RESULT__DESCRIPTION = PACKAGABLE_ELEMENT__DESCRIPTION;
 
 	/**
-	 * The feature id for the '<em><b>Date</b></em>' attribute.
+	 * The feature id for the '<em><b>Result Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEST_RESULT__DATE = PACKAGABLE_ELEMENT_FEATURE_COUNT + 0;
+	int TEST_RESULT__RESULT_DATE = PACKAGABLE_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Executed Test Case</b></em>' reference.
@@ -831,15 +831,15 @@ public interface LtlPackage extends EPackage {
 	EClass getTestExecution();
 
 	/**
-	 * Returns the meta object for the attribute '{@link com.leonardo.ltl.ltl.TestExecution#getDate <em>Date</em>}'.
+	 * Returns the meta object for the attribute '{@link com.leonardo.ltl.ltl.TestExecution#getExecutionDate <em>Execution Date</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Date</em>'.
-	 * @see com.leonardo.ltl.ltl.TestExecution#getDate()
+	 * @return the meta object for the attribute '<em>Execution Date</em>'.
+	 * @see com.leonardo.ltl.ltl.TestExecution#getExecutionDate()
 	 * @see #getTestExecution()
 	 * @generated
 	 */
-	EAttribute getTestExecution_Date();
+	EAttribute getTestExecution_ExecutionDate();
 
 	/**
 	 * Returns the meta object for the reference list '{@link com.leonardo.ltl.ltl.TestExecution#getTestSpecifications <em>Test Specifications</em>}'.
@@ -927,15 +927,15 @@ public interface LtlPackage extends EPackage {
 	EClass getTestSpecification();
 
 	/**
-	 * Returns the meta object for the attribute '{@link com.leonardo.ltl.ltl.TestSpecification#getDate <em>Date</em>}'.
+	 * Returns the meta object for the attribute '{@link com.leonardo.ltl.ltl.TestSpecification#getCreationDate <em>Creation Date</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Date</em>'.
-	 * @see com.leonardo.ltl.ltl.TestSpecification#getDate()
+	 * @return the meta object for the attribute '<em>Creation Date</em>'.
+	 * @see com.leonardo.ltl.ltl.TestSpecification#getCreationDate()
 	 * @see #getTestSpecification()
 	 * @generated
 	 */
-	EAttribute getTestSpecification_Date();
+	EAttribute getTestSpecification_CreationDate();
 
 	/**
 	 * Returns the meta object for the attribute '{@link com.leonardo.ltl.ltl.TestSpecification#getVersion <em>Version</em>}'.
@@ -1067,15 +1067,15 @@ public interface LtlPackage extends EPackage {
 	EClass getTestResult();
 
 	/**
-	 * Returns the meta object for the attribute '{@link com.leonardo.ltl.ltl.TestResult#getDate <em>Date</em>}'.
+	 * Returns the meta object for the attribute '{@link com.leonardo.ltl.ltl.TestResult#getResultDate <em>Result Date</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Date</em>'.
-	 * @see com.leonardo.ltl.ltl.TestResult#getDate()
+	 * @return the meta object for the attribute '<em>Result Date</em>'.
+	 * @see com.leonardo.ltl.ltl.TestResult#getResultDate()
 	 * @see #getTestResult()
 	 * @generated
 	 */
-	EAttribute getTestResult_Date();
+	EAttribute getTestResult_ResultDate();
 
 	/**
 	 * Returns the meta object for the reference '{@link com.leonardo.ltl.ltl.TestResult#getExecutedTestCase <em>Executed Test Case</em>}'.
@@ -1232,12 +1232,12 @@ public interface LtlPackage extends EPackage {
 		EClass TEST_EXECUTION = eINSTANCE.getTestExecution();
 
 		/**
-		 * The meta object literal for the '<em><b>Date</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Execution Date</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TEST_EXECUTION__DATE = eINSTANCE.getTestExecution_Date();
+		EAttribute TEST_EXECUTION__EXECUTION_DATE = eINSTANCE.getTestExecution_ExecutionDate();
 
 		/**
 		 * The meta object literal for the '<em><b>Test Specifications</b></em>' reference list feature.
@@ -1310,12 +1310,12 @@ public interface LtlPackage extends EPackage {
 		EClass TEST_SPECIFICATION = eINSTANCE.getTestSpecification();
 
 		/**
-		 * The meta object literal for the '<em><b>Date</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Creation Date</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TEST_SPECIFICATION__DATE = eINSTANCE.getTestSpecification_Date();
+		EAttribute TEST_SPECIFICATION__CREATION_DATE = eINSTANCE.getTestSpecification_CreationDate();
 
 		/**
 		 * The meta object literal for the '<em><b>Version</b></em>' attribute feature.
@@ -1420,12 +1420,12 @@ public interface LtlPackage extends EPackage {
 		EClass TEST_RESULT = eINSTANCE.getTestResult();
 
 		/**
-		 * The meta object literal for the '<em><b>Date</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Result Date</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TEST_RESULT__DATE = eINSTANCE.getTestResult_Date();
+		EAttribute TEST_RESULT__RESULT_DATE = eINSTANCE.getTestResult_ResultDate();
 
 		/**
 		 * The meta object literal for the '<em><b>Executed Test Case</b></em>' reference feature.

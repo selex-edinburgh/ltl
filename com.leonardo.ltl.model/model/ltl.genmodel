@@ -19,7 +19,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ltl.ecore#//PackagableElement/description"/>
     </genClasses>
     <genClasses ecoreClass="ltl.ecore#//TestExecution">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ltl.ecore#//TestExecution/date"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ltl.ecore#//TestExecution/executionDate"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ltl.ecore#//TestExecution/testSpecifications"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ltl.ecore#//TestExecution/testResults"/>
     </genClasses>
@@ -31,7 +31,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ltl.ecore#//TestRequirement/testableEntity"/>
     </genClasses>
     <genClasses image="false" ecoreClass="ltl.ecore#//TestSpecification">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ltl.ecore#//TestSpecification/date"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ltl.ecore#//TestSpecification/creationDate"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ltl.ecore#//TestSpecification/version"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ltl.ecore#//TestSpecification/tests"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ltl.ecore#//TestSpecification/demonstratesSatisfactionOf"/>
@@ -47,7 +47,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ltl.ecore#//TestCase/expectedResult"/>
     </genClasses>
     <genClasses ecoreClass="ltl.ecore#//TestResult">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ltl.ecore#//TestResult/date"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ltl.ecore#//TestResult/resultDate"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ltl.ecore#//TestResult/executedTestCase"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ltl.ecore#//TestResult/actualResult"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ltl.ecore#//TestResult/passed"/>

@@ -102,7 +102,7 @@ public class LTLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *         (
 	 *             (
 	 *                 description=STRING | 
-	 *                 date=STRING | 
+	 *                 creationDate=DATE | 
 	 *                 version=STRING | 
 	 *                 precondition=STRING | 
 	 *                 testingMethod=STRING | 
@@ -128,7 +128,7 @@ public class LTLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     TestExecution returns TestExecution
 	 *
 	 * Constraint:
-	 *     (name=QualifiedName (description=STRING | date=STRING | testSpecifications+=[TestSpecification|QualifiedName])*)
+	 *     (name=QualifiedName (description=STRING | executionDate=DATE | testSpecifications+=[TestSpecification|QualifiedName])*)
 	 * </pre>
 	 */
 	protected void sequence_TestExecution(ISerializationContext context, TestExecution semanticObject) {
@@ -159,7 +159,7 @@ public class LTLSemanticSequencer extends AbstractDelegatingSemanticSequencer {
 	 *     TestSuite returns TestSuite
 	 *
 	 * Constraint:
-	 *     (name=QualifiedName (description=STRING | date=STRING | version=STRING | testSpecifications+=[TestSpecification|QualifiedName])*)
+	 *     (name=QualifiedName (description=STRING | creationDate=DATE | version=STRING | testSpecifications+=[TestSpecification|QualifiedName])*)
 	 * </pre>
 	 */
 	protected void sequence_TestSuite(ISerializationContext context, TestSuite semanticObject) {

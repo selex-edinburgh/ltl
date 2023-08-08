@@ -45,7 +45,7 @@ TestSuite returns TestSuite:
 	'suite' name=QualifiedName
 	(
 		('description' description=STRING)? & 
-		('date' date=STRING)? &
+		('date' creationDate=DATE)? &
 		('version' version=STRING)? &
 		('cases'
 		(testSpecifications+=[TestSpecification|QualifiedName])*
@@ -59,7 +59,7 @@ TestCase returns TestCase:
 	'case' name=QualifiedName
 	(
 		('description' description=STRING)? & 
-		('date' date=STRING)? &
+		('date' creationDate=DATE)? &
 		('version' version=STRING)? &
 		('precondition' precondition=STRING)? &
 		('method' testingMethod=STRING)? &
@@ -78,7 +78,7 @@ TestCase returns TestCase:
 TestExecution returns TestExecution:
 	'test' name=QualifiedName (
 		('description' description=STRING)? &
-		('date' date=STRING)? &
+		('date' executionDate=DATE)? &
 		('specification' (testSpecifications+=[TestSpecification|QualifiedName])* 'end')
 	)
 	'end';
@@ -88,3 +88,6 @@ QualifiedName hidden():
 
 Boolean returns ecore::EBoolean:
 	'true' | 'false';
+	
+DATE returns ecore::EDate: 
+	STRING;

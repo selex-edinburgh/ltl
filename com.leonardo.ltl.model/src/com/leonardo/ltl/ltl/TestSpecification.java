@@ -2,6 +2,7 @@
  */
 package com.leonardo.ltl.ltl;
 
+import java.util.Date;
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -17,7 +18,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link com.leonardo.ltl.ltl.TestSpecification#getDate <em>Date</em>}</li>
+ *   <li>{@link com.leonardo.ltl.ltl.TestSpecification#getCreationDate <em>Creation Date</em>}</li>
  *   <li>{@link com.leonardo.ltl.ltl.TestSpecification#getVersion <em>Version</em>}</li>
  *   <li>{@link com.leonardo.ltl.ltl.TestSpecification#getTests <em>Tests</em>}</li>
  *   <li>{@link com.leonardo.ltl.ltl.TestSpecification#getDemonstratesSatisfactionOf <em>Demonstrates Satisfaction Of</em>}</li>
@@ -31,29 +32,29 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface TestSpecification extends PackagableElement {
 	/**
-	 * Returns the value of the '<em><b>Date</b></em>' attribute.
+	 * Returns the value of the '<em><b>Creation Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The date time the test specification is executed
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Date</em>' attribute.
-	 * @see #setDate(String)
-	 * @see com.leonardo.ltl.ltl.LtlPackage#getTestSpecification_Date()
+	 * @return the value of the '<em>Creation Date</em>' attribute.
+	 * @see #setCreationDate(Date)
+	 * @see com.leonardo.ltl.ltl.LtlPackage#getTestSpecification_CreationDate()
 	 * @model
 	 * @generated
 	 */
-	String getDate();
+	Date getCreationDate();
 
 	/**
-	 * Sets the value of the '{@link com.leonardo.ltl.ltl.TestSpecification#getDate <em>Date</em>}' attribute.
+	 * Sets the value of the '{@link com.leonardo.ltl.ltl.TestSpecification#getCreationDate <em>Creation Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Date</em>' attribute.
-	 * @see #getDate()
+	 * @param value the new value of the '<em>Creation Date</em>' attribute.
+	 * @see #getCreationDate()
 	 * @generated
 	 */
-	void setDate(String value);
+	void setCreationDate(Date value);
 
 	/**
 	 * Returns the value of the '<em><b>Version</b></em>' attribute.

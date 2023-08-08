@@ -2,6 +2,7 @@
  */
 package com.leonardo.ltl.ltl;
 
+import java.util.Date;
 import org.eclipse.emf.common.util.EList;
 
 /**
@@ -17,7 +18,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link com.leonardo.ltl.ltl.TestExecution#getDate <em>Date</em>}</li>
+ *   <li>{@link com.leonardo.ltl.ltl.TestExecution#getExecutionDate <em>Execution Date</em>}</li>
  *   <li>{@link com.leonardo.ltl.ltl.TestExecution#getTestSpecifications <em>Test Specifications</em>}</li>
  *   <li>{@link com.leonardo.ltl.ltl.TestExecution#getTestResults <em>Test Results</em>}</li>
  * </ul>
@@ -28,29 +29,29 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface TestExecution extends PackagableElement {
 	/**
-	 * Returns the value of the '<em><b>Date</b></em>' attribute.
+	 * Returns the value of the '<em><b>Execution Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The date time the test execution is performed.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Date</em>' attribute.
-	 * @see #setDate(String)
-	 * @see com.leonardo.ltl.ltl.LtlPackage#getTestExecution_Date()
+	 * @return the value of the '<em>Execution Date</em>' attribute.
+	 * @see #setExecutionDate(Date)
+	 * @see com.leonardo.ltl.ltl.LtlPackage#getTestExecution_ExecutionDate()
 	 * @model
 	 * @generated
 	 */
-	String getDate();
+	Date getExecutionDate();
 
 	/**
-	 * Sets the value of the '{@link com.leonardo.ltl.ltl.TestExecution#getDate <em>Date</em>}' attribute.
+	 * Sets the value of the '{@link com.leonardo.ltl.ltl.TestExecution#getExecutionDate <em>Execution Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Date</em>' attribute.
-	 * @see #getDate()
+	 * @param value the new value of the '<em>Execution Date</em>' attribute.
+	 * @see #getExecutionDate()
 	 * @generated
 	 */
-	void setDate(String value);
+	void setExecutionDate(Date value);
 
 	/**
 	 * Returns the value of the '<em><b>Test Specifications</b></em>' reference list.

@@ -6,6 +6,7 @@ package com.leonardo.ltl.formatting2;
 import com.google.inject.Inject;
 import com.leonardo.ltl.ltl.Model;
 import com.leonardo.ltl.ltl.PackagableElement;
+import com.leonardo.ltl.services.LTLGrammarAccess;
 import java.util.Arrays;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
@@ -18,7 +19,7 @@ import org.eclipse.xtext.xbase.lib.Extension;
 public class LTLFormatter extends AbstractFormatter2 {
   @Inject
   @Extension
-  private /* LTLGrammarAccess */Object _lTLGrammarAccess;
+  private LTLGrammarAccess _lTLGrammarAccess;
 
   protected void _format(final Model model, @Extension final IFormattableDocument document) {
     EList<com.leonardo.ltl.ltl.Package> _packages = model.getPackages();

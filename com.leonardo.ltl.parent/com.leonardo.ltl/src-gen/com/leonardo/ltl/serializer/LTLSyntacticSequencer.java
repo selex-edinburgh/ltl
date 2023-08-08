@@ -102,7 +102,7 @@ public class LTLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ('end' ('requirements' 'end')* 'entities')*
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     date=STRING ('requirements' 'end')* 'entities' (ambiguity) tests+=[TestableEntity|QualifiedName]
+	 *     creationDate=DATE ('requirements' 'end')* 'entities' (ambiguity) tests+=[TestableEntity|QualifiedName]
 	 *     description=STRING ('requirements' 'end')* 'entities' (ambiguity) tests+=[TestableEntity|QualifiedName]
 	 *     expectedResult=STRING ('requirements' 'end')* 'entities' (ambiguity) tests+=[TestableEntity|QualifiedName]
 	 *     inputs+=STRING ('requirements' 'end')* 'entities' (ambiguity) tests+=[TestableEntity|QualifiedName]
@@ -125,7 +125,7 @@ public class LTLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ('end' ('entities' 'end')* 'requirements')*
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     date=STRING ('entities' 'end')* 'requirements' (ambiguity) demonstratesSatisfactionOf+=[TestRequirement|QualifiedName]
+	 *     creationDate=DATE ('entities' 'end')* 'requirements' (ambiguity) demonstratesSatisfactionOf+=[TestRequirement|QualifiedName]
 	 *     demonstratesSatisfactionOf+=[TestRequirement|QualifiedName] (ambiguity) demonstratesSatisfactionOf+=[TestRequirement|QualifiedName]
 	 *     description=STRING ('entities' 'end')* 'requirements' (ambiguity) demonstratesSatisfactionOf+=[TestRequirement|QualifiedName]
 	 *     expectedResult=STRING ('entities' 'end')* 'requirements' (ambiguity) demonstratesSatisfactionOf+=[TestRequirement|QualifiedName]
@@ -148,7 +148,7 @@ public class LTLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ('entities' 'end' ('requirements' 'end')*)*
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     tests+=[TestableEntity|QualifiedName] 'end' ('requirements' 'end')* (ambiguity) 'date' date=STRING
+	 *     tests+=[TestableEntity|QualifiedName] 'end' ('requirements' 'end')* (ambiguity) 'date' creationDate=DATE
 	 *     tests+=[TestableEntity|QualifiedName] 'end' ('requirements' 'end')* (ambiguity) 'description' description=STRING
 	 *     tests+=[TestableEntity|QualifiedName] 'end' ('requirements' 'end')* (ambiguity) 'end' (rule end)
 	 *     tests+=[TestableEntity|QualifiedName] 'end' ('requirements' 'end')* (ambiguity) 'expectedResult' expectedResult=STRING
@@ -170,8 +170,8 @@ public class LTLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ('entities' 'end')*
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     date=STRING (ambiguity) 'requirements' ('end' (ambiguity) 'requirements')* demonstratesSatisfactionOf+=[TestRequirement|QualifiedName]
-	 *     demonstratesSatisfactionOf+=[TestRequirement|QualifiedName] 'end' (ambiguity) ('requirements' 'end' (ambiguity))* 'date' date=STRING
+	 *     creationDate=DATE (ambiguity) 'requirements' ('end' (ambiguity) 'requirements')* demonstratesSatisfactionOf+=[TestRequirement|QualifiedName]
+	 *     demonstratesSatisfactionOf+=[TestRequirement|QualifiedName] 'end' (ambiguity) ('requirements' 'end' (ambiguity))* 'date' creationDate=DATE
 	 *     demonstratesSatisfactionOf+=[TestRequirement|QualifiedName] 'end' (ambiguity) ('requirements' 'end' (ambiguity))* 'description' description=STRING
 	 *     demonstratesSatisfactionOf+=[TestRequirement|QualifiedName] 'end' (ambiguity) ('requirements' 'end' (ambiguity))* 'end' (rule end)
 	 *     demonstratesSatisfactionOf+=[TestRequirement|QualifiedName] 'end' (ambiguity) ('requirements' 'end' (ambiguity))* 'expectedResult' expectedResult=STRING
@@ -202,7 +202,7 @@ public class LTLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ('requirements' 'end' ('entities' 'end')*)*
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     demonstratesSatisfactionOf+=[TestRequirement|QualifiedName] 'end' ('entities' 'end')* (ambiguity) 'date' date=STRING
+	 *     demonstratesSatisfactionOf+=[TestRequirement|QualifiedName] 'end' ('entities' 'end')* (ambiguity) 'date' creationDate=DATE
 	 *     demonstratesSatisfactionOf+=[TestRequirement|QualifiedName] 'end' ('entities' 'end')* (ambiguity) 'description' description=STRING
 	 *     demonstratesSatisfactionOf+=[TestRequirement|QualifiedName] 'end' ('entities' 'end')* (ambiguity) 'end' (rule end)
 	 *     demonstratesSatisfactionOf+=[TestRequirement|QualifiedName] 'end' ('entities' 'end')* (ambiguity) 'expectedResult' expectedResult=STRING
@@ -224,7 +224,7 @@ public class LTLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ('requirements' 'end')*
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     date=STRING (ambiguity) 'entities' ('end' (ambiguity) 'entities')* tests+=[TestableEntity|QualifiedName]
+	 *     creationDate=DATE (ambiguity) 'entities' ('end' (ambiguity) 'entities')* tests+=[TestableEntity|QualifiedName]
 	 *     demonstratesSatisfactionOf+=[TestRequirement|QualifiedName] 'end' (ambiguity) (('entities' 'end')? ('entities' 'end' 'requirements' 'end')?)+ 'entities' tests+=[TestableEntity|QualifiedName]
 	 *     description=STRING (ambiguity) 'entities' ('end' (ambiguity) 'entities')* tests+=[TestableEntity|QualifiedName]
 	 *     expectedResult=STRING (ambiguity) 'entities' ('end' (ambiguity) 'entities')* tests+=[TestableEntity|QualifiedName]
@@ -233,7 +233,7 @@ public class LTLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     postcondition=STRING (ambiguity) 'entities' ('end' (ambiguity) 'entities')* tests+=[TestableEntity|QualifiedName]
 	 *     precondition=STRING (ambiguity) 'entities' ('end' (ambiguity) 'entities')* tests+=[TestableEntity|QualifiedName]
 	 *     testingMethod=STRING (ambiguity) 'entities' ('end' (ambiguity) 'entities')* tests+=[TestableEntity|QualifiedName]
-	 *     tests+=[TestableEntity|QualifiedName] 'end' (ambiguity) ('entities' 'end' (ambiguity))* 'date' date=STRING
+	 *     tests+=[TestableEntity|QualifiedName] 'end' (ambiguity) ('entities' 'end' (ambiguity))* 'date' creationDate=DATE
 	 *     tests+=[TestableEntity|QualifiedName] 'end' (ambiguity) ('entities' 'end' (ambiguity))* 'description' description=STRING
 	 *     tests+=[TestableEntity|QualifiedName] 'end' (ambiguity) ('entities' 'end' (ambiguity))* 'end' (rule end)
 	 *     tests+=[TestableEntity|QualifiedName] 'end' (ambiguity) ('entities' 'end' (ambiguity))* 'expectedResult' expectedResult=STRING
@@ -256,16 +256,16 @@ public class LTLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (('entities' 'end') | ('requirements' 'end'))*
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     date=STRING (ambiguity) 'date' date=STRING
-	 *     date=STRING (ambiguity) 'description' description=STRING
-	 *     date=STRING (ambiguity) 'end' (rule end)
-	 *     date=STRING (ambiguity) 'expectedResult' expectedResult=STRING
-	 *     date=STRING (ambiguity) 'inputs' inputs+=STRING
-	 *     date=STRING (ambiguity) 'method' testingMethod=STRING
-	 *     date=STRING (ambiguity) 'postcondition' postcondition=STRING
-	 *     date=STRING (ambiguity) 'precondition' precondition=STRING
-	 *     date=STRING (ambiguity) 'version' version=STRING
-	 *     description=STRING (ambiguity) 'date' date=STRING
+	 *     creationDate=DATE (ambiguity) 'date' creationDate=DATE
+	 *     creationDate=DATE (ambiguity) 'description' description=STRING
+	 *     creationDate=DATE (ambiguity) 'end' (rule end)
+	 *     creationDate=DATE (ambiguity) 'expectedResult' expectedResult=STRING
+	 *     creationDate=DATE (ambiguity) 'inputs' inputs+=STRING
+	 *     creationDate=DATE (ambiguity) 'method' testingMethod=STRING
+	 *     creationDate=DATE (ambiguity) 'postcondition' postcondition=STRING
+	 *     creationDate=DATE (ambiguity) 'precondition' precondition=STRING
+	 *     creationDate=DATE (ambiguity) 'version' version=STRING
+	 *     description=STRING (ambiguity) 'date' creationDate=DATE
 	 *     description=STRING (ambiguity) 'description' description=STRING
 	 *     description=STRING (ambiguity) 'end' (rule end)
 	 *     description=STRING (ambiguity) 'expectedResult' expectedResult=STRING
@@ -274,7 +274,7 @@ public class LTLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     description=STRING (ambiguity) 'postcondition' postcondition=STRING
 	 *     description=STRING (ambiguity) 'precondition' precondition=STRING
 	 *     description=STRING (ambiguity) 'version' version=STRING
-	 *     expectedResult=STRING (ambiguity) 'date' date=STRING
+	 *     expectedResult=STRING (ambiguity) 'date' creationDate=DATE
 	 *     expectedResult=STRING (ambiguity) 'description' description=STRING
 	 *     expectedResult=STRING (ambiguity) 'end' (rule end)
 	 *     expectedResult=STRING (ambiguity) 'expectedResult' expectedResult=STRING
@@ -283,7 +283,7 @@ public class LTLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     expectedResult=STRING (ambiguity) 'postcondition' postcondition=STRING
 	 *     expectedResult=STRING (ambiguity) 'precondition' precondition=STRING
 	 *     expectedResult=STRING (ambiguity) 'version' version=STRING
-	 *     inputs+=STRING (ambiguity) 'date' date=STRING
+	 *     inputs+=STRING (ambiguity) 'date' creationDate=DATE
 	 *     inputs+=STRING (ambiguity) 'description' description=STRING
 	 *     inputs+=STRING (ambiguity) 'end' (rule end)
 	 *     inputs+=STRING (ambiguity) 'expectedResult' expectedResult=STRING
@@ -292,7 +292,7 @@ public class LTLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     inputs+=STRING (ambiguity) 'postcondition' postcondition=STRING
 	 *     inputs+=STRING (ambiguity) 'precondition' precondition=STRING
 	 *     inputs+=STRING (ambiguity) 'version' version=STRING
-	 *     name=QualifiedName (ambiguity) 'date' date=STRING
+	 *     name=QualifiedName (ambiguity) 'date' creationDate=DATE
 	 *     name=QualifiedName (ambiguity) 'description' description=STRING
 	 *     name=QualifiedName (ambiguity) 'end' (rule end)
 	 *     name=QualifiedName (ambiguity) 'expectedResult' expectedResult=STRING
@@ -301,7 +301,7 @@ public class LTLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     name=QualifiedName (ambiguity) 'postcondition' postcondition=STRING
 	 *     name=QualifiedName (ambiguity) 'precondition' precondition=STRING
 	 *     name=QualifiedName (ambiguity) 'version' version=STRING
-	 *     postcondition=STRING (ambiguity) 'date' date=STRING
+	 *     postcondition=STRING (ambiguity) 'date' creationDate=DATE
 	 *     postcondition=STRING (ambiguity) 'description' description=STRING
 	 *     postcondition=STRING (ambiguity) 'end' (rule end)
 	 *     postcondition=STRING (ambiguity) 'expectedResult' expectedResult=STRING
@@ -310,7 +310,7 @@ public class LTLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     postcondition=STRING (ambiguity) 'postcondition' postcondition=STRING
 	 *     postcondition=STRING (ambiguity) 'precondition' precondition=STRING
 	 *     postcondition=STRING (ambiguity) 'version' version=STRING
-	 *     precondition=STRING (ambiguity) 'date' date=STRING
+	 *     precondition=STRING (ambiguity) 'date' creationDate=DATE
 	 *     precondition=STRING (ambiguity) 'description' description=STRING
 	 *     precondition=STRING (ambiguity) 'end' (rule end)
 	 *     precondition=STRING (ambiguity) 'expectedResult' expectedResult=STRING
@@ -319,7 +319,7 @@ public class LTLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     precondition=STRING (ambiguity) 'postcondition' postcondition=STRING
 	 *     precondition=STRING (ambiguity) 'precondition' precondition=STRING
 	 *     precondition=STRING (ambiguity) 'version' version=STRING
-	 *     testingMethod=STRING (ambiguity) 'date' date=STRING
+	 *     testingMethod=STRING (ambiguity) 'date' creationDate=DATE
 	 *     testingMethod=STRING (ambiguity) 'description' description=STRING
 	 *     testingMethod=STRING (ambiguity) 'end' (rule end)
 	 *     testingMethod=STRING (ambiguity) 'expectedResult' expectedResult=STRING
@@ -328,7 +328,7 @@ public class LTLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     testingMethod=STRING (ambiguity) 'postcondition' postcondition=STRING
 	 *     testingMethod=STRING (ambiguity) 'precondition' precondition=STRING
 	 *     testingMethod=STRING (ambiguity) 'version' version=STRING
-	 *     version=STRING (ambiguity) 'date' date=STRING
+	 *     version=STRING (ambiguity) 'date' creationDate=DATE
 	 *     version=STRING (ambiguity) 'description' description=STRING
 	 *     version=STRING (ambiguity) 'end' (rule end)
 	 *     version=STRING (ambiguity) 'expectedResult' expectedResult=STRING
@@ -378,8 +378,8 @@ public class LTLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ('end' 'specification')*
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     date=STRING 'specification' (ambiguity) testSpecifications+=[TestSpecification|QualifiedName]
 	 *     description=STRING 'specification' (ambiguity) testSpecifications+=[TestSpecification|QualifiedName]
+	 *     executionDate=DATE 'specification' (ambiguity) testSpecifications+=[TestSpecification|QualifiedName]
 	 *     name=QualifiedName 'specification' (ambiguity) testSpecifications+=[TestSpecification|QualifiedName]
 	 *     testSpecifications+=[TestSpecification|QualifiedName] (ambiguity) testSpecifications+=[TestSpecification|QualifiedName]
 	 
@@ -395,16 +395,16 @@ public class LTLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ('specification' 'end')*
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     date=STRING (ambiguity) 'date' date=STRING
-	 *     date=STRING (ambiguity) 'description' description=STRING
-	 *     date=STRING (ambiguity) 'end' (rule end)
-	 *     description=STRING (ambiguity) 'date' date=STRING
+	 *     description=STRING (ambiguity) 'date' executionDate=DATE
 	 *     description=STRING (ambiguity) 'description' description=STRING
 	 *     description=STRING (ambiguity) 'end' (rule end)
-	 *     name=QualifiedName (ambiguity) 'date' date=STRING
+	 *     executionDate=DATE (ambiguity) 'date' executionDate=DATE
+	 *     executionDate=DATE (ambiguity) 'description' description=STRING
+	 *     executionDate=DATE (ambiguity) 'end' (rule end)
+	 *     name=QualifiedName (ambiguity) 'date' executionDate=DATE
 	 *     name=QualifiedName (ambiguity) 'description' description=STRING
 	 *     name=QualifiedName (ambiguity) 'end' (rule end)
-	 *     testSpecifications+=[TestSpecification|QualifiedName] 'end' (ambiguity) 'date' date=STRING
+	 *     testSpecifications+=[TestSpecification|QualifiedName] 'end' (ambiguity) 'date' executionDate=DATE
 	 *     testSpecifications+=[TestSpecification|QualifiedName] 'end' (ambiguity) 'description' description=STRING
 	 *     testSpecifications+=[TestSpecification|QualifiedName] 'end' (ambiguity) 'end' (rule end)
 	 
@@ -420,23 +420,23 @@ public class LTLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ('cases' 'end')*
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     date=STRING (ambiguity) 'date' date=STRING
-	 *     date=STRING (ambiguity) 'description' description=STRING
-	 *     date=STRING (ambiguity) 'end' (rule end)
-	 *     date=STRING (ambiguity) 'version' version=STRING
-	 *     description=STRING (ambiguity) 'date' date=STRING
+	 *     creationDate=DATE (ambiguity) 'date' creationDate=DATE
+	 *     creationDate=DATE (ambiguity) 'description' description=STRING
+	 *     creationDate=DATE (ambiguity) 'end' (rule end)
+	 *     creationDate=DATE (ambiguity) 'version' version=STRING
+	 *     description=STRING (ambiguity) 'date' creationDate=DATE
 	 *     description=STRING (ambiguity) 'description' description=STRING
 	 *     description=STRING (ambiguity) 'end' (rule end)
 	 *     description=STRING (ambiguity) 'version' version=STRING
-	 *     name=QualifiedName (ambiguity) 'date' date=STRING
+	 *     name=QualifiedName (ambiguity) 'date' creationDate=DATE
 	 *     name=QualifiedName (ambiguity) 'description' description=STRING
 	 *     name=QualifiedName (ambiguity) 'end' (rule end)
 	 *     name=QualifiedName (ambiguity) 'version' version=STRING
-	 *     testSpecifications+=[TestSpecification|QualifiedName] 'end' (ambiguity) 'date' date=STRING
+	 *     testSpecifications+=[TestSpecification|QualifiedName] 'end' (ambiguity) 'date' creationDate=DATE
 	 *     testSpecifications+=[TestSpecification|QualifiedName] 'end' (ambiguity) 'description' description=STRING
 	 *     testSpecifications+=[TestSpecification|QualifiedName] 'end' (ambiguity) 'end' (rule end)
 	 *     testSpecifications+=[TestSpecification|QualifiedName] 'end' (ambiguity) 'version' version=STRING
-	 *     version=STRING (ambiguity) 'date' date=STRING
+	 *     version=STRING (ambiguity) 'date' creationDate=DATE
 	 *     version=STRING (ambiguity) 'description' description=STRING
 	 *     version=STRING (ambiguity) 'end' (rule end)
 	 *     version=STRING (ambiguity) 'version' version=STRING
@@ -453,7 +453,7 @@ public class LTLSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ('end' 'cases')*
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     date=STRING 'cases' (ambiguity) testSpecifications+=[TestSpecification|QualifiedName]
+	 *     creationDate=DATE 'cases' (ambiguity) testSpecifications+=[TestSpecification|QualifiedName]
 	 *     description=STRING 'cases' (ambiguity) testSpecifications+=[TestSpecification|QualifiedName]
 	 *     name=QualifiedName 'cases' (ambiguity) testSpecifications+=[TestSpecification|QualifiedName]
 	 *     testSpecifications+=[TestSpecification|QualifiedName] (ambiguity) testSpecifications+=[TestSpecification|QualifiedName]

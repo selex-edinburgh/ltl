@@ -9,6 +9,7 @@ import com.leonardo.ltl.ltl.TestableEntity;
 
 import java.util.Collection;
 
+import java.util.Date;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.EList;
@@ -27,7 +28,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link com.leonardo.ltl.ltl.impl.TestSpecificationImpl#getDate <em>Date</em>}</li>
+ *   <li>{@link com.leonardo.ltl.ltl.impl.TestSpecificationImpl#getCreationDate <em>Creation Date</em>}</li>
  *   <li>{@link com.leonardo.ltl.ltl.impl.TestSpecificationImpl#getVersion <em>Version</em>}</li>
  *   <li>{@link com.leonardo.ltl.ltl.impl.TestSpecificationImpl#getTests <em>Tests</em>}</li>
  *   <li>{@link com.leonardo.ltl.ltl.impl.TestSpecificationImpl#getDemonstratesSatisfactionOf <em>Demonstrates Satisfaction Of</em>}</li>
@@ -39,24 +40,24 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  */
 public abstract class TestSpecificationImpl extends PackagableElementImpl implements TestSpecification {
 	/**
-	 * The default value of the '{@link #getDate() <em>Date</em>}' attribute.
+	 * The default value of the '{@link #getCreationDate() <em>Creation Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDate()
+	 * @see #getCreationDate()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String DATE_EDEFAULT = null;
+	protected static final Date CREATION_DATE_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getDate() <em>Date</em>}' attribute.
+	 * The cached value of the '{@link #getCreationDate() <em>Creation Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDate()
+	 * @see #getCreationDate()
 	 * @generated
 	 * @ordered
 	 */
-	protected String date = DATE_EDEFAULT;
+	protected Date creationDate = CREATION_DATE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getVersion() <em>Version</em>}' attribute.
@@ -163,8 +164,8 @@ public abstract class TestSpecificationImpl extends PackagableElementImpl implem
 	 * @generated
 	 */
 	@Override
-	public String getDate() {
-		return date;
+	public Date getCreationDate() {
+		return creationDate;
 	}
 
 	/**
@@ -173,11 +174,11 @@ public abstract class TestSpecificationImpl extends PackagableElementImpl implem
 	 * @generated
 	 */
 	@Override
-	public void setDate(String newDate) {
-		String oldDate = date;
-		date = newDate;
+	public void setCreationDate(Date newCreationDate) {
+		Date oldCreationDate = creationDate;
+		creationDate = newCreationDate;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, LtlPackage.TEST_SPECIFICATION__DATE, oldDate, date));
+			eNotify(new ENotificationImpl(this, Notification.SET, LtlPackage.TEST_SPECIFICATION__CREATION_DATE, oldCreationDate, creationDate));
 	}
 
 	/**
@@ -283,8 +284,8 @@ public abstract class TestSpecificationImpl extends PackagableElementImpl implem
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case LtlPackage.TEST_SPECIFICATION__DATE:
-				return getDate();
+			case LtlPackage.TEST_SPECIFICATION__CREATION_DATE:
+				return getCreationDate();
 			case LtlPackage.TEST_SPECIFICATION__VERSION:
 				return getVersion();
 			case LtlPackage.TEST_SPECIFICATION__TESTS:
@@ -308,8 +309,8 @@ public abstract class TestSpecificationImpl extends PackagableElementImpl implem
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case LtlPackage.TEST_SPECIFICATION__DATE:
-				setDate((String)newValue);
+			case LtlPackage.TEST_SPECIFICATION__CREATION_DATE:
+				setCreationDate((Date)newValue);
 				return;
 			case LtlPackage.TEST_SPECIFICATION__VERSION:
 				setVersion((String)newValue);
@@ -340,8 +341,8 @@ public abstract class TestSpecificationImpl extends PackagableElementImpl implem
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case LtlPackage.TEST_SPECIFICATION__DATE:
-				setDate(DATE_EDEFAULT);
+			case LtlPackage.TEST_SPECIFICATION__CREATION_DATE:
+				setCreationDate(CREATION_DATE_EDEFAULT);
 				return;
 			case LtlPackage.TEST_SPECIFICATION__VERSION:
 				setVersion(VERSION_EDEFAULT);
@@ -370,8 +371,8 @@ public abstract class TestSpecificationImpl extends PackagableElementImpl implem
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case LtlPackage.TEST_SPECIFICATION__DATE:
-				return DATE_EDEFAULT == null ? date != null : !DATE_EDEFAULT.equals(date);
+			case LtlPackage.TEST_SPECIFICATION__CREATION_DATE:
+				return CREATION_DATE_EDEFAULT == null ? creationDate != null : !CREATION_DATE_EDEFAULT.equals(creationDate);
 			case LtlPackage.TEST_SPECIFICATION__VERSION:
 				return VERSION_EDEFAULT == null ? version != null : !VERSION_EDEFAULT.equals(version);
 			case LtlPackage.TEST_SPECIFICATION__TESTS:
@@ -396,8 +397,8 @@ public abstract class TestSpecificationImpl extends PackagableElementImpl implem
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (date: ");
-		result.append(date);
+		result.append(" (creationDate: ");
+		result.append(creationDate);
 		result.append(", version: ");
 		result.append(version);
 		result.append(", precondition: ");

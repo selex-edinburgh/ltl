@@ -363,8 +363,8 @@ public class LTLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final RuleCall cDescriptionSTRINGTerminalRuleCall_3_0_1_0 = (RuleCall)cDescriptionAssignment_3_0_1.eContents().get(0);
 		private final Group cGroup_3_1 = (Group)cUnorderedGroup_3.eContents().get(1);
 		private final Keyword cDateKeyword_3_1_0 = (Keyword)cGroup_3_1.eContents().get(0);
-		private final Assignment cDateAssignment_3_1_1 = (Assignment)cGroup_3_1.eContents().get(1);
-		private final RuleCall cDateSTRINGTerminalRuleCall_3_1_1_0 = (RuleCall)cDateAssignment_3_1_1.eContents().get(0);
+		private final Assignment cCreationDateAssignment_3_1_1 = (Assignment)cGroup_3_1.eContents().get(1);
+		private final RuleCall cCreationDateDATEParserRuleCall_3_1_1_0 = (RuleCall)cCreationDateAssignment_3_1_1.eContents().get(0);
 		private final Group cGroup_3_2 = (Group)cUnorderedGroup_3.eContents().get(2);
 		private final Keyword cVersionKeyword_3_2_0 = (Keyword)cGroup_3_2.eContents().get(0);
 		private final Assignment cVersionAssignment_3_2_1 = (Assignment)cGroup_3_2.eContents().get(1);
@@ -382,7 +382,7 @@ public class LTLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//    'suite' name=QualifiedName
 		//    (
 		//        ('description' description=STRING)? &
-		//        ('date' date=STRING)? &
+		//        ('date' creationDate=DATE)? &
 		//        ('version' version=STRING)? &
 		//        ('cases'
 		//        (testSpecifications+=[TestSpecification|QualifiedName])*
@@ -395,7 +395,7 @@ public class LTLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//'suite' name=QualifiedName
 		//(
 		//    ('description' description=STRING)? &
-		//    ('date' date=STRING)? &
+		//    ('date' creationDate=DATE)? &
 		//    ('version' version=STRING)? &
 		//    ('cases'
 		//    (testSpecifications+=[TestSpecification|QualifiedName])*
@@ -418,7 +418,7 @@ public class LTLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		
 		//(
 		//    ('description' description=STRING)? &
-		//    ('date' date=STRING)? &
+		//    ('date' creationDate=DATE)? &
 		//    ('version' version=STRING)? &
 		//    ('cases'
 		//    (testSpecifications+=[TestSpecification|QualifiedName])*
@@ -438,17 +438,17 @@ public class LTLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//STRING
 		public RuleCall getDescriptionSTRINGTerminalRuleCall_3_0_1_0() { return cDescriptionSTRINGTerminalRuleCall_3_0_1_0; }
 		
-		//('date' date=STRING)?
+		//('date' creationDate=DATE)?
 		public Group getGroup_3_1() { return cGroup_3_1; }
 		
 		//'date'
 		public Keyword getDateKeyword_3_1_0() { return cDateKeyword_3_1_0; }
 		
-		//date=STRING
-		public Assignment getDateAssignment_3_1_1() { return cDateAssignment_3_1_1; }
+		//creationDate=DATE
+		public Assignment getCreationDateAssignment_3_1_1() { return cCreationDateAssignment_3_1_1; }
 		
-		//STRING
-		public RuleCall getDateSTRINGTerminalRuleCall_3_1_1_0() { return cDateSTRINGTerminalRuleCall_3_1_1_0; }
+		//DATE
+		public RuleCall getCreationDateDATEParserRuleCall_3_1_1_0() { return cCreationDateDATEParserRuleCall_3_1_1_0; }
 		
 		//('version' version=STRING)?
 		public Group getGroup_3_2() { return cGroup_3_2; }
@@ -499,8 +499,8 @@ public class LTLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final RuleCall cDescriptionSTRINGTerminalRuleCall_3_0_1_0 = (RuleCall)cDescriptionAssignment_3_0_1.eContents().get(0);
 		private final Group cGroup_3_1 = (Group)cUnorderedGroup_3.eContents().get(1);
 		private final Keyword cDateKeyword_3_1_0 = (Keyword)cGroup_3_1.eContents().get(0);
-		private final Assignment cDateAssignment_3_1_1 = (Assignment)cGroup_3_1.eContents().get(1);
-		private final RuleCall cDateSTRINGTerminalRuleCall_3_1_1_0 = (RuleCall)cDateAssignment_3_1_1.eContents().get(0);
+		private final Assignment cCreationDateAssignment_3_1_1 = (Assignment)cGroup_3_1.eContents().get(1);
+		private final RuleCall cCreationDateDATEParserRuleCall_3_1_1_0 = (RuleCall)cCreationDateAssignment_3_1_1.eContents().get(0);
 		private final Group cGroup_3_2 = (Group)cUnorderedGroup_3.eContents().get(2);
 		private final Keyword cVersionKeyword_3_2_0 = (Keyword)cGroup_3_2.eContents().get(0);
 		private final Assignment cVersionAssignment_3_2_1 = (Assignment)cGroup_3_2.eContents().get(1);
@@ -548,7 +548,7 @@ public class LTLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//    'case' name=QualifiedName
 		//    (
 		//        ('description' description=STRING)? &
-		//        ('date' date=STRING)? &
+		//        ('date' creationDate=DATE)? &
 		//        ('version' version=STRING)? &
 		//        ('precondition' precondition=STRING)? &
 		//        ('method' testingMethod=STRING)? &
@@ -569,7 +569,7 @@ public class LTLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//'case' name=QualifiedName
 		//(
 		//    ('description' description=STRING)? &
-		//    ('date' date=STRING)? &
+		//    ('date' creationDate=DATE)? &
 		//    ('version' version=STRING)? &
 		//    ('precondition' precondition=STRING)? &
 		//    ('method' testingMethod=STRING)? &
@@ -600,7 +600,7 @@ public class LTLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		
 		//(
 		//    ('description' description=STRING)? &
-		//    ('date' date=STRING)? &
+		//    ('date' creationDate=DATE)? &
 		//    ('version' version=STRING)? &
 		//    ('precondition' precondition=STRING)? &
 		//    ('method' testingMethod=STRING)? &
@@ -628,17 +628,17 @@ public class LTLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//STRING
 		public RuleCall getDescriptionSTRINGTerminalRuleCall_3_0_1_0() { return cDescriptionSTRINGTerminalRuleCall_3_0_1_0; }
 		
-		//('date' date=STRING)?
+		//('date' creationDate=DATE)?
 		public Group getGroup_3_1() { return cGroup_3_1; }
 		
 		//'date'
 		public Keyword getDateKeyword_3_1_0() { return cDateKeyword_3_1_0; }
 		
-		//date=STRING
-		public Assignment getDateAssignment_3_1_1() { return cDateAssignment_3_1_1; }
+		//creationDate=DATE
+		public Assignment getCreationDateAssignment_3_1_1() { return cCreationDateAssignment_3_1_1; }
 		
-		//STRING
-		public RuleCall getDateSTRINGTerminalRuleCall_3_1_1_0() { return cDateSTRINGTerminalRuleCall_3_1_1_0; }
+		//DATE
+		public RuleCall getCreationDateDATEParserRuleCall_3_1_1_0() { return cCreationDateDATEParserRuleCall_3_1_1_0; }
 		
 		//('version' version=STRING)?
 		public Group getGroup_3_2() { return cGroup_3_2; }
@@ -780,8 +780,8 @@ public class LTLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		private final RuleCall cDescriptionSTRINGTerminalRuleCall_2_0_1_0 = (RuleCall)cDescriptionAssignment_2_0_1.eContents().get(0);
 		private final Group cGroup_2_1 = (Group)cUnorderedGroup_2.eContents().get(1);
 		private final Keyword cDateKeyword_2_1_0 = (Keyword)cGroup_2_1.eContents().get(0);
-		private final Assignment cDateAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
-		private final RuleCall cDateSTRINGTerminalRuleCall_2_1_1_0 = (RuleCall)cDateAssignment_2_1_1.eContents().get(0);
+		private final Assignment cExecutionDateAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
+		private final RuleCall cExecutionDateDATEParserRuleCall_2_1_1_0 = (RuleCall)cExecutionDateAssignment_2_1_1.eContents().get(0);
 		private final Group cGroup_2_2 = (Group)cUnorderedGroup_2.eContents().get(2);
 		private final Keyword cSpecificationKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
 		private final Assignment cTestSpecificationsAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
@@ -793,7 +793,7 @@ public class LTLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//TestExecution returns TestExecution:
 		//    'test' name=QualifiedName (
 		//        ('description' description=STRING)? &
-		//        ('date' date=STRING)? &
+		//        ('date' executionDate=DATE)? &
 		//        ('specification' (testSpecifications+=[TestSpecification|QualifiedName])* 'end')
 		//    )
 		//    'end';
@@ -801,7 +801,7 @@ public class LTLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		
 		//'test' name=QualifiedName (
 		//    ('description' description=STRING)? &
-		//    ('date' date=STRING)? &
+		//    ('date' executionDate=DATE)? &
 		//    ('specification' (testSpecifications+=[TestSpecification|QualifiedName])* 'end')
 		//)
 		//'end'
@@ -818,7 +818,7 @@ public class LTLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		
 		//(
 		//       ('description' description=STRING)? &
-		//       ('date' date=STRING)? &
+		//       ('date' executionDate=DATE)? &
 		//       ('specification' (testSpecifications+=[TestSpecification|QualifiedName])* 'end')
 		//   )
 		public UnorderedGroup getUnorderedGroup_2() { return cUnorderedGroup_2; }
@@ -835,17 +835,17 @@ public class LTLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//STRING
 		public RuleCall getDescriptionSTRINGTerminalRuleCall_2_0_1_0() { return cDescriptionSTRINGTerminalRuleCall_2_0_1_0; }
 		
-		//('date' date=STRING)?
+		//('date' executionDate=DATE)?
 		public Group getGroup_2_1() { return cGroup_2_1; }
 		
 		//'date'
 		public Keyword getDateKeyword_2_1_0() { return cDateKeyword_2_1_0; }
 		
-		//date=STRING
-		public Assignment getDateAssignment_2_1_1() { return cDateAssignment_2_1_1; }
+		//executionDate=DATE
+		public Assignment getExecutionDateAssignment_2_1_1() { return cExecutionDateAssignment_2_1_1; }
 		
-		//STRING
-		public RuleCall getDateSTRINGTerminalRuleCall_2_1_1_0() { return cDateSTRINGTerminalRuleCall_2_1_1_0; }
+		//DATE
+		public RuleCall getExecutionDateDATEParserRuleCall_2_1_1_0() { return cExecutionDateDATEParserRuleCall_2_1_1_0; }
 		
 		//('specification' (testSpecifications+=[TestSpecification|QualifiedName])* 'end')
 		public Group getGroup_2_2() { return cGroup_2_2; }
@@ -914,6 +914,17 @@ public class LTLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		//'false'
 		public Keyword getFalseKeyword_1() { return cFalseKeyword_1; }
 	}
+	public class DATEElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "com.leonardo.ltl.LTL.DATE");
+		private final RuleCall cSTRINGTerminalRuleCall = (RuleCall)rule.eContents().get(1);
+		
+		//DATE returns ecore::EDate:
+		//    STRING;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//STRING
+		public RuleCall getSTRINGTerminalRuleCall() { return cSTRINGTerminalRuleCall; }
+	}
 	
 	
 	private final ModelElements pModel;
@@ -927,6 +938,7 @@ public class LTLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	private final TestExecutionElements pTestExecution;
 	private final QualifiedNameElements pQualifiedName;
 	private final BooleanElements pBoolean;
+	private final DATEElements pDATE;
 	
 	private final Grammar grammar;
 	
@@ -948,6 +960,7 @@ public class LTLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 		this.pTestExecution = new TestExecutionElements();
 		this.pQualifiedName = new QualifiedNameElements();
 		this.pBoolean = new BooleanElements();
+		this.pDATE = new DATEElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -1060,7 +1073,7 @@ public class LTLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	//    'suite' name=QualifiedName
 	//    (
 	//        ('description' description=STRING)? &
-	//        ('date' date=STRING)? &
+	//        ('date' creationDate=DATE)? &
 	//        ('version' version=STRING)? &
 	//        ('cases'
 	//        (testSpecifications+=[TestSpecification|QualifiedName])*
@@ -1080,7 +1093,7 @@ public class LTLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	//    'case' name=QualifiedName
 	//    (
 	//        ('description' description=STRING)? &
-	//        ('date' date=STRING)? &
+	//        ('date' creationDate=DATE)? &
 	//        ('version' version=STRING)? &
 	//        ('precondition' precondition=STRING)? &
 	//        ('method' testingMethod=STRING)? &
@@ -1106,7 +1119,7 @@ public class LTLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	//TestExecution returns TestExecution:
 	//    'test' name=QualifiedName (
 	//        ('description' description=STRING)? &
-	//        ('date' date=STRING)? &
+	//        ('date' executionDate=DATE)? &
 	//        ('specification' (testSpecifications+=[TestSpecification|QualifiedName])* 'end')
 	//    )
 	//    'end';
@@ -1136,6 +1149,16 @@ public class LTLGrammarAccess extends AbstractElementFinder.AbstractGrammarEleme
 	
 	public ParserRule getBooleanRule() {
 		return getBooleanAccess().getRule();
+	}
+	
+	//DATE returns ecore::EDate:
+	//    STRING;
+	public DATEElements getDATEAccess() {
+		return pDATE;
+	}
+	
+	public ParserRule getDATERule() {
+		return getDATEAccess().getRule();
 	}
 	
 	//terminal ID: '^'?('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;

@@ -2,6 +2,8 @@
  */
 package com.leonardo.ltl.ltl;
 
+import java.util.Date;
+
 
 /**
  * <!-- begin-user-doc -->
@@ -16,7 +18,7 @@ package com.leonardo.ltl.ltl;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link com.leonardo.ltl.ltl.TestResult#getDate <em>Date</em>}</li>
+ *   <li>{@link com.leonardo.ltl.ltl.TestResult#getResultDate <em>Result Date</em>}</li>
  *   <li>{@link com.leonardo.ltl.ltl.TestResult#getExecutedTestCase <em>Executed Test Case</em>}</li>
  *   <li>{@link com.leonardo.ltl.ltl.TestResult#getActualResult <em>Actual Result</em>}</li>
  *   <li>{@link com.leonardo.ltl.ltl.TestResult#isPassed <em>Passed</em>}</li>
@@ -29,29 +31,29 @@ package com.leonardo.ltl.ltl;
  */
 public interface TestResult extends PackagableElement {
 	/**
-	 * Returns the value of the '<em><b>Date</b></em>' attribute.
+	 * Returns the value of the '<em><b>Result Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * The date time the test result is obtained.
 	 * <!-- end-model-doc -->
-	 * @return the value of the '<em>Date</em>' attribute.
-	 * @see #setDate(String)
-	 * @see com.leonardo.ltl.ltl.LtlPackage#getTestResult_Date()
+	 * @return the value of the '<em>Result Date</em>' attribute.
+	 * @see #setResultDate(Date)
+	 * @see com.leonardo.ltl.ltl.LtlPackage#getTestResult_ResultDate()
 	 * @model
 	 * @generated
 	 */
-	String getDate();
+	Date getResultDate();
 
 	/**
-	 * Sets the value of the '{@link com.leonardo.ltl.ltl.TestResult#getDate <em>Date</em>}' attribute.
+	 * Sets the value of the '{@link com.leonardo.ltl.ltl.TestResult#getResultDate <em>Result Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Date</em>' attribute.
-	 * @see #getDate()
+	 * @param value the new value of the '<em>Result Date</em>' attribute.
+	 * @see #getResultDate()
 	 * @generated
 	 */
-	void setDate(String value);
+	void setResultDate(Date value);
 
 	/**
 	 * Returns the value of the '<em><b>Executed Test Case</b></em>' reference.

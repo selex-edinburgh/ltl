@@ -264,7 +264,7 @@ public class LtlPackageImpl extends EPackageImpl implements LtlPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTestExecution_Date() {
+	public EAttribute getTestExecution_ExecutionDate() {
 		return (EAttribute)testExecutionEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -354,7 +354,7 @@ public class LtlPackageImpl extends EPackageImpl implements LtlPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTestSpecification_Date() {
+	public EAttribute getTestSpecification_CreationDate() {
 		return (EAttribute)testSpecificationEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -484,7 +484,7 @@ public class LtlPackageImpl extends EPackageImpl implements LtlPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTestResult_Date() {
+	public EAttribute getTestResult_ResultDate() {
 		return (EAttribute)testResultEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -570,7 +570,7 @@ public class LtlPackageImpl extends EPackageImpl implements LtlPackage {
 		createEAttribute(packagableElementEClass, PACKAGABLE_ELEMENT__DESCRIPTION);
 
 		testExecutionEClass = createEClass(TEST_EXECUTION);
-		createEAttribute(testExecutionEClass, TEST_EXECUTION__DATE);
+		createEAttribute(testExecutionEClass, TEST_EXECUTION__EXECUTION_DATE);
 		createEReference(testExecutionEClass, TEST_EXECUTION__TEST_SPECIFICATIONS);
 		createEReference(testExecutionEClass, TEST_EXECUTION__TEST_RESULTS);
 
@@ -582,7 +582,7 @@ public class LtlPackageImpl extends EPackageImpl implements LtlPackage {
 		createEReference(testRequirementEClass, TEST_REQUIREMENT__TESTABLE_ENTITY);
 
 		testSpecificationEClass = createEClass(TEST_SPECIFICATION);
-		createEAttribute(testSpecificationEClass, TEST_SPECIFICATION__DATE);
+		createEAttribute(testSpecificationEClass, TEST_SPECIFICATION__CREATION_DATE);
 		createEAttribute(testSpecificationEClass, TEST_SPECIFICATION__VERSION);
 		createEReference(testSpecificationEClass, TEST_SPECIFICATION__TESTS);
 		createEReference(testSpecificationEClass, TEST_SPECIFICATION__DEMONSTRATES_SATISFACTION_OF);
@@ -598,7 +598,7 @@ public class LtlPackageImpl extends EPackageImpl implements LtlPackage {
 		createEAttribute(testCaseEClass, TEST_CASE__EXPECTED_RESULT);
 
 		testResultEClass = createEClass(TEST_RESULT);
-		createEAttribute(testResultEClass, TEST_RESULT__DATE);
+		createEAttribute(testResultEClass, TEST_RESULT__RESULT_DATE);
 		createEReference(testResultEClass, TEST_RESULT__EXECUTED_TEST_CASE);
 		createEAttribute(testResultEClass, TEST_RESULT__ACTUAL_RESULT);
 		createEAttribute(testResultEClass, TEST_RESULT__PASSED);
@@ -655,7 +655,7 @@ public class LtlPackageImpl extends EPackageImpl implements LtlPackage {
 		initEAttribute(getPackagableElement_Description(), ecorePackage.getEString(), "description", null, 0, 1, PackagableElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(testExecutionEClass, TestExecution.class, "TestExecution", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTestExecution_Date(), ecorePackage.getEString(), "date", null, 0, 1, TestExecution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTestExecution_ExecutionDate(), ecorePackage.getEDate(), "executionDate", null, 0, 1, TestExecution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTestExecution_TestSpecifications(), this.getTestSpecification(), null, "testSpecifications", null, 0, -1, TestExecution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTestExecution_TestResults(), this.getTestResult(), null, "testResults", null, 0, -1, TestExecution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -667,7 +667,7 @@ public class LtlPackageImpl extends EPackageImpl implements LtlPackage {
 		initEReference(getTestRequirement_TestableEntity(), this.getTestableEntity(), null, "testableEntity", null, 0, 1, TestRequirement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(testSpecificationEClass, TestSpecification.class, "TestSpecification", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTestSpecification_Date(), ecorePackage.getEString(), "date", null, 0, 1, TestSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTestSpecification_CreationDate(), ecorePackage.getEDate(), "creationDate", null, 0, 1, TestSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTestSpecification_Version(), ecorePackage.getEString(), "version", null, 0, 1, TestSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTestSpecification_Tests(), this.getTestableEntity(), null, "tests", null, 0, -1, TestSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTestSpecification_DemonstratesSatisfactionOf(), this.getTestRequirement(), null, "demonstratesSatisfactionOf", null, 0, -1, TestSpecification.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -683,7 +683,7 @@ public class LtlPackageImpl extends EPackageImpl implements LtlPackage {
 		initEAttribute(getTestCase_ExpectedResult(), ecorePackage.getEJavaObject(), "expectedResult", null, 0, 1, TestCase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(testResultEClass, TestResult.class, "TestResult", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTestResult_Date(), ecorePackage.getEString(), "date", null, 0, 1, TestResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTestResult_ResultDate(), ecorePackage.getEDate(), "resultDate", null, 0, 1, TestResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTestResult_ExecutedTestCase(), this.getTestCase(), null, "executedTestCase", null, 0, 1, TestResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTestResult_ActualResult(), ecorePackage.getEJavaObject(), "actualResult", null, 0, 1, TestResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTestResult_Passed(), ecorePackage.getEBoolean(), "passed", "true", 0, 1, TestResult.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

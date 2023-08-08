@@ -80,12 +80,12 @@ public class LTLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getTestRequirementAccess().getTestableEntityAssignment_3_2_1(), "rule__TestRequirement__TestableEntityAssignment_3_2_1");
 			builder.put(grammarAccess.getTestSuiteAccess().getNameAssignment_2(), "rule__TestSuite__NameAssignment_2");
 			builder.put(grammarAccess.getTestSuiteAccess().getDescriptionAssignment_3_0_1(), "rule__TestSuite__DescriptionAssignment_3_0_1");
-			builder.put(grammarAccess.getTestSuiteAccess().getDateAssignment_3_1_1(), "rule__TestSuite__DateAssignment_3_1_1");
+			builder.put(grammarAccess.getTestSuiteAccess().getCreationDateAssignment_3_1_1(), "rule__TestSuite__CreationDateAssignment_3_1_1");
 			builder.put(grammarAccess.getTestSuiteAccess().getVersionAssignment_3_2_1(), "rule__TestSuite__VersionAssignment_3_2_1");
 			builder.put(grammarAccess.getTestSuiteAccess().getTestSpecificationsAssignment_3_3_1(), "rule__TestSuite__TestSpecificationsAssignment_3_3_1");
 			builder.put(grammarAccess.getTestCaseAccess().getNameAssignment_2(), "rule__TestCase__NameAssignment_2");
 			builder.put(grammarAccess.getTestCaseAccess().getDescriptionAssignment_3_0_1(), "rule__TestCase__DescriptionAssignment_3_0_1");
-			builder.put(grammarAccess.getTestCaseAccess().getDateAssignment_3_1_1(), "rule__TestCase__DateAssignment_3_1_1");
+			builder.put(grammarAccess.getTestCaseAccess().getCreationDateAssignment_3_1_1(), "rule__TestCase__CreationDateAssignment_3_1_1");
 			builder.put(grammarAccess.getTestCaseAccess().getVersionAssignment_3_2_1(), "rule__TestCase__VersionAssignment_3_2_1");
 			builder.put(grammarAccess.getTestCaseAccess().getPreconditionAssignment_3_3_1(), "rule__TestCase__PreconditionAssignment_3_3_1");
 			builder.put(grammarAccess.getTestCaseAccess().getTestingMethodAssignment_3_4_1(), "rule__TestCase__TestingMethodAssignment_3_4_1");
@@ -97,7 +97,7 @@ public class LTLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getTestCaseAccess().getDemonstratesSatisfactionOfAssignment_3_9_1(), "rule__TestCase__DemonstratesSatisfactionOfAssignment_3_9_1");
 			builder.put(grammarAccess.getTestExecutionAccess().getNameAssignment_1(), "rule__TestExecution__NameAssignment_1");
 			builder.put(grammarAccess.getTestExecutionAccess().getDescriptionAssignment_2_0_1(), "rule__TestExecution__DescriptionAssignment_2_0_1");
-			builder.put(grammarAccess.getTestExecutionAccess().getDateAssignment_2_1_1(), "rule__TestExecution__DateAssignment_2_1_1");
+			builder.put(grammarAccess.getTestExecutionAccess().getExecutionDateAssignment_2_1_1(), "rule__TestExecution__ExecutionDateAssignment_2_1_1");
 			builder.put(grammarAccess.getTestExecutionAccess().getTestSpecificationsAssignment_2_2_1(), "rule__TestExecution__TestSpecificationsAssignment_2_2_1");
 			builder.put(grammarAccess.getPackageAccess().getUnorderedGroup_2(), "rule__Package__UnorderedGroup_2");
 			builder.put(grammarAccess.getTestableEntityAccess().getUnorderedGroup_3(), "rule__TestableEntity__UnorderedGroup_3");
